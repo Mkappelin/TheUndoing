@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "TheUndoing",
+			"Path": "..\\Source\\TheUndoing.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "TheUndoingEditor",
+			"Path": "..\\Source\\TheUndoingEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

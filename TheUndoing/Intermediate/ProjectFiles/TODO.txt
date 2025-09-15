@@ -1,0 +1,17 @@
+---- HIGH PRIORITY ----
+
+- MagicianGameModeBase:
+-- Remake the MagicianGameModeBase into a GameMode class
+
+- MagicianPlayerController:
+-- Make sure widgets in Tick() never are null
+-- Change widget pointers to be UPROPERTY() members
+
+---- Medium Priority ----
+
+- MagicianGameModeBase:
+-- In MagicianGameModeBase::SwitchPlayerController you blend after the swap (good), but if NewCamera is null you never restore the pawn view.
+-- Consider calling ClientRestart(Pawn) on the new controller (owning client) after the swap
+
+- MagicianPlayerController:
+-- You mix Enhanced Input (character) with legacy input bindings (controller). That’s fine, but remember legacy “Action Mappings” must exist for "PaintButton" (Maybe Change)
