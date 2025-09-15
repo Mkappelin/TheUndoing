@@ -19,14 +19,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 
 // ********** Begin Class AMagicianGameModeBase ****************************************************
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSwitchToDefaultPC); \
 	DECLARE_FUNCTION(execSwitchToSpellPC);
 
 
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianGameModeBase_NoRegister();
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_INCLASS_NO_PURE_DECLS \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMagicianGameModeBase(); \
 	friend struct Z_Construct_UClass_AMagicianGameModeBase_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(AMagicianGameModeBase)
 
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_ENHANCED_CONSTRUCTORS \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMagicianGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -49,13 +49,13 @@ public: \
 	NO_API virtual ~AMagicianGameModeBase();
 
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_5_PROLOG
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_GENERATED_BODY \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_7_PROLOG
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_INCLASS_NO_PURE_DECLS \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_8_ENHANCED_CONSTRUCTORS \
+	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_INCLASS_NO_PURE_DECLS \
+	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianGameModeBase_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

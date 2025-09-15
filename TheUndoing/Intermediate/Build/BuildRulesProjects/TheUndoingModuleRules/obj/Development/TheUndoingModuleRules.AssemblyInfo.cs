@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TheUndoingModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f49885b80d5d5ac74713a1157aef79255487ef82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bffbf23c8be9b0cd0e9120ee99f2c779b583708e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TheUndoingModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TheUndoingModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
