@@ -47,6 +47,9 @@ public:
 
 	UFUNCTION(BlueprintCallable) void ShowTrainWidget();
 	UFUNCTION(BlueprintCallable) void HideTrainWidget();
+	UFUNCTION(BlueprintCallable) void ShowPaintWidget();
+	UFUNCTION(BlueprintCallable) void HidePaintWidget();
+
 	UFUNCTION(BlueprintCallable) void AddTemplateToDataTable(const FString Name);
 
 protected:
@@ -55,9 +58,6 @@ protected:
 
 	// Cleanup for heap allocation
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-
-	// Server-sided movement lock/unlock
-	UFUNCTION(Server, Reliable) void Server_SetPlayerCanMove(bool bCanMove);
 	
 	// --- Lazy init for UI ---
 	UFUNCTION() void TryInitUI();

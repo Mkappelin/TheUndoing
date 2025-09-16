@@ -40,12 +40,12 @@ void AMagicianPlayerController::BeginPlay()
 	// Defer widget creation until we have a LocalPlayer (fixes: "no attached player")
 	TryInitUI();
 
-	FInputModeGameAndUI InputMode;
+	/*FInputModeGameAndUI InputMode;
 	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 	InputMode.SetHideCursorDuringCapture(false);
 	bShowMouseCursor = true;
 
-	SetInputMode(InputMode);
+	SetInputMode(InputMode);*/
 
 	IsTraining = false;
 
@@ -54,14 +54,14 @@ void AMagicianPlayerController::BeginPlay()
 
 void AMagicianPlayerController::TryInitUI()
 {
-	// Only the owning client should create HUD widgets
+	// Apparently only the owning client should create HUD widgets
 	if (!IsLocalController())
 		return;
 
-	// We need a LocalPlayer before CreateWidget(this, ...)
+	// Checks for a LocalPlayer before CreateWidget(this, ...)
 	if (!GetLocalPlayer())
 	{
-		// Try again next tick; the LocalPlayer arrives a frame later in some cases
+		// Try again next tick, in case LocalPlayer arrives a frame later
 		GetWorldTimerManager().SetTimerForNextTick(this, &AMagicianPlayerController::TryInitUI);
 		return;
 	}
@@ -69,8 +69,6 @@ void AMagicianPlayerController::TryInitUI()
 	// Paint widget
 	if (!PaintWidget)
 	{
-		// Keep your previous StaticClass fallback if you don’t want PaintWidgetClass:
-		// PaintWidget = CreateWidget<UPaintWidget>(this, UPaintWidget::StaticClass());
 		if (PaintWidgetClass)
 			PaintWidget = CreateWidget<UPaintWidget>(this, PaintWidgetClass);
 		else
@@ -79,7 +77,7 @@ void AMagicianPlayerController::TryInitUI()
 		if (PaintWidget)
 		{
 			PaintWidget->AddToViewport();
-			PaintWidget->SetVisibility(ESlateVisibility::Visible);  // you had this default
+			HidePaintWidget();
 		}
 	}
 
@@ -90,7 +88,7 @@ void AMagicianPlayerController::TryInitUI()
 		if (TrainWidget)
 		{
 			TrainWidget->AddToViewport();
-			HideTrainWidget(); // keep your behavior
+			HideTrainWidget(); 
 		}
 	}
 }
@@ -109,7 +107,6 @@ void AMagicianPlayerController::SetupInputComponent()
 	InputComponent->BindAction("PaintButton", IE_Released, this, &AMagicianPlayerController::ReleasedToPaint);
 	InputComponent->BindKey(EKeys::T, IE_Pressed, this, &AMagicianPlayerController::TogglePaintMode);
 }
-
 
 void AMagicianPlayerController::Tick(float DeltaTime)
 {
@@ -222,10 +219,11 @@ void AMagicianPlayerController::EnterPaintMode(AActor* NewCamera, float BlendTim
 	Mode.SetHideCursorDuringCapture(false);
 	SetInputMode(Mode);
 
-	// Disable gameplay movement on server
-	Server_SetPlayerCanMove(false);
+	// Disable gameplay movement- and look input
+	SetIgnoreMoveInput(true);
+	SetIgnoreLookInput(true);
 
-	// If your Character has SetInputEnabled(bool), you can also remove gameplay context locally:
+	// If Character has SetInputEnabled(bool), you can also remove gameplay context locally:
 	//if (APawn* P = GetPawn())
 	//{
 	//	if (auto* PC = Cast<APlayerCharacter>(P))
@@ -253,8 +251,9 @@ void AMagicianPlayerController::ExitPaintMode(float BlendTime)
 	bShowMouseCursor = false;
 	SetInputMode(FInputModeGameOnly{});
 
-	// Re-enable movement on server
-	Server_SetPlayerCanMove(true);
+	// Re-enable movement- and look input
+	SetIgnoreMoveInput(false);
+	SetIgnoreLookInput(false);
 
 	// Re-enable gameplay input mapping on local
 	/*if (APawn* P = GetPawn())
@@ -278,8 +277,8 @@ void AMagicianPlayerController::Spell()
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "No Magic", true, FVector2D(2, 2));
 	else {
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Result.Name, true, FVector2D(2, 2));
-		AMagicianPawn* MagicianaPawn = Cast<AMagicianPawn>(GetPawn());
-		MagicianaPawn->SpawnShape(Result.Name);
+		/*AMagicianPawn* MagicianaPawn = Cast<AMagicianPawn>(GetPawn());
+		MagicianaPawn->SpawnShape(Result.Name);*/
 	}
 
 	PaintWidget->RemoveAllPoints();
@@ -377,12 +376,19 @@ void AMagicianPlayerController::HideTrainWidget()
 	}
 }
 
-void AMagicianPlayerController::Server_SetPlayerCanMove_Implementation(bool bCanMove)
+void AMagicianPlayerController::ShowPaintWidget()
 {
-	if (ACharacter* C = Cast<ACharacter>(GetPawn()))
+	if (PaintWidget != nullptr)
 	{
-		if (bCanMove) C->GetCharacterMovement()->SetMovementMode(MOVE_Walking);
-		else          C->GetCharacterMovement()->DisableMovement();
+		PaintWidget->SetVisibility(ESlateVisibility::Visible);
+	}
+}
+
+void AMagicianPlayerController::HidePaintWidget()
+{
+	if (PaintWidget != nullptr)
+	{
+		PaintWidget->SetVisibility(ESlateVisibility::Hidden);
 	}
 }
 

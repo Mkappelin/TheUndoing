@@ -166,6 +166,35 @@ DEFINE_FUNCTION(AMagicianPlayerController::execExitPaintMode)
 }
 // ********** End Class AMagicianPlayerController Function ExitPaintMode ***************************
 
+// ********** Begin Class AMagicianPlayerController Function HidePaintWidget ***********************
+struct Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMagicianPlayerController, nullptr, "HidePaintWidget", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMagicianPlayerController::execHidePaintWidget)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->HidePaintWidget();
+	P_NATIVE_END;
+}
+// ********** End Class AMagicianPlayerController Function HidePaintWidget *************************
+
 // ********** Begin Class AMagicianPlayerController Function HideTrainWidget ***********************
 struct Z_Construct_UFunction_AMagicianPlayerController_HideTrainWidget_Statics
 {
@@ -195,66 +224,34 @@ DEFINE_FUNCTION(AMagicianPlayerController::execHideTrainWidget)
 }
 // ********** End Class AMagicianPlayerController Function HideTrainWidget *************************
 
-// ********** Begin Class AMagicianPlayerController Function Server_SetPlayerCanMove ***************
-struct MagicianPlayerController_eventServer_SetPlayerCanMove_Parms
-{
-	bool bCanMove;
-};
-static FName NAME_AMagicianPlayerController_Server_SetPlayerCanMove = FName(TEXT("Server_SetPlayerCanMove"));
-void AMagicianPlayerController::Server_SetPlayerCanMove(bool bCanMove)
-{
-	MagicianPlayerController_eventServer_SetPlayerCanMove_Parms Parms;
-	Parms.bCanMove=bCanMove ? true : false;
-	UFunction* Func = FindFunctionChecked(NAME_AMagicianPlayerController_Server_SetPlayerCanMove);
-	ProcessEvent(Func,&Parms);
-}
-struct Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics
+// ********** Begin Class AMagicianPlayerController Function ShowPaintWidget ***********************
+struct Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Server-sided movement lock/unlock\n" },
-#endif
 		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Server-sided movement lock/unlock" },
-#endif
 	};
 #endif // WITH_METADATA
-	static void NewProp_bCanMove_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_bCanMove;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-void Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::NewProp_bCanMove_SetBit(void* Obj)
-{
-	((MagicianPlayerController_eventServer_SetPlayerCanMove_Parms*)Obj)->bCanMove = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::NewProp_bCanMove = { "bCanMove", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MagicianPlayerController_eventServer_SetPlayerCanMove_Parms), &Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::NewProp_bCanMove_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::NewProp_bCanMove,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMagicianPlayerController, nullptr, "Server_SetPlayerCanMove", Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::PropPointers), sizeof(MagicianPlayerController_eventServer_SetPlayerCanMove_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00280CC0, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(MagicianPlayerController_eventServer_SetPlayerCanMove_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove()
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMagicianPlayerController, nullptr, "ShowPaintWidget", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(AMagicianPlayerController::execServer_SetPlayerCanMove)
+DEFINE_FUNCTION(AMagicianPlayerController::execShowPaintWidget)
 {
-	P_GET_UBOOL(Z_Param_bCanMove);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->Server_SetPlayerCanMove_Implementation(Z_Param_bCanMove);
+	P_THIS->ShowPaintWidget();
 	P_NATIVE_END;
 }
-// ********** End Class AMagicianPlayerController Function Server_SetPlayerCanMove *****************
+// ********** End Class AMagicianPlayerController Function ShowPaintWidget *************************
 
 // ********** Begin Class AMagicianPlayerController Function ShowTrainWidget ***********************
 struct Z_Construct_UFunction_AMagicianPlayerController_ShowTrainWidget_Statics
@@ -413,8 +410,9 @@ void AMagicianPlayerController::StaticRegisterNativesAMagicianPlayerController()
 		{ "AddTemplateToDataTable", &AMagicianPlayerController::execAddTemplateToDataTable },
 		{ "EnterPaintMode", &AMagicianPlayerController::execEnterPaintMode },
 		{ "ExitPaintMode", &AMagicianPlayerController::execExitPaintMode },
+		{ "HidePaintWidget", &AMagicianPlayerController::execHidePaintWidget },
 		{ "HideTrainWidget", &AMagicianPlayerController::execHideTrainWidget },
-		{ "Server_SetPlayerCanMove", &AMagicianPlayerController::execServer_SetPlayerCanMove },
+		{ "ShowPaintWidget", &AMagicianPlayerController::execShowPaintWidget },
 		{ "ShowTrainWidget", &AMagicianPlayerController::execShowTrainWidget },
 		{ "TogglePaintMode", &AMagicianPlayerController::execTogglePaintMode },
 		{ "TrainMode", &AMagicianPlayerController::execTrainMode },
@@ -534,8 +532,9 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 		{ &Z_Construct_UFunction_AMagicianPlayerController_AddTemplateToDataTable, "AddTemplateToDataTable" }, // 4154160942
 		{ &Z_Construct_UFunction_AMagicianPlayerController_EnterPaintMode, "EnterPaintMode" }, // 722284997
 		{ &Z_Construct_UFunction_AMagicianPlayerController_ExitPaintMode, "ExitPaintMode" }, // 1274517538
+		{ &Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget, "HidePaintWidget" }, // 504123192
 		{ &Z_Construct_UFunction_AMagicianPlayerController_HideTrainWidget, "HideTrainWidget" }, // 200876
-		{ &Z_Construct_UFunction_AMagicianPlayerController_Server_SetPlayerCanMove, "Server_SetPlayerCanMove" }, // 3143430960
+		{ &Z_Construct_UFunction_AMagicianPlayerController_ShowPaintWidget, "ShowPaintWidget" }, // 1532578062
 		{ &Z_Construct_UFunction_AMagicianPlayerController_ShowTrainWidget, "ShowTrainWidget" }, // 1630781200
 		{ &Z_Construct_UFunction_AMagicianPlayerController_TogglePaintMode, "TogglePaintMode" }, // 1372290192
 		{ &Z_Construct_UFunction_AMagicianPlayerController_TrainMode, "TrainMode" }, // 966274414
@@ -610,10 +609,10 @@ AMagicianPlayerController::~AMagicianPlayerController() {}
 struct Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMagicianPlayerController, AMagicianPlayerController::StaticClass, TEXT("AMagicianPlayerController"), &Z_Registration_Info_UClass_AMagicianPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPlayerController), 795583865U) },
+		{ Z_Construct_UClass_AMagicianPlayerController, AMagicianPlayerController::StaticClass, TEXT("AMagicianPlayerController"), &Z_Registration_Info_UClass_AMagicianPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPlayerController), 2692618913U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_217899513(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_2123653816(TEXT("/Script/TheUndoing"),
 	Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -20,10 +20,10 @@ class AActor;
 
 // ********** Begin Class AMagicianPlayerController ************************************************
 #define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void Server_SetPlayerCanMove_Implementation(bool bCanMove); \
 	DECLARE_FUNCTION(execTryInitUI); \
-	DECLARE_FUNCTION(execServer_SetPlayerCanMove); \
 	DECLARE_FUNCTION(execAddTemplateToDataTable); \
+	DECLARE_FUNCTION(execHidePaintWidget); \
+	DECLARE_FUNCTION(execShowPaintWidget); \
 	DECLARE_FUNCTION(execHideTrainWidget); \
 	DECLARE_FUNCTION(execShowTrainWidget); \
 	DECLARE_FUNCTION(execExitPaintMode); \
@@ -32,7 +32,6 @@ class AActor;
 	DECLARE_FUNCTION(execTrainMode);
 
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_CALLBACK_WRAPPERS
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianPlayerController_NoRegister();
 
 #define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_INCLASS_NO_PURE_DECLS \
@@ -61,7 +60,6 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_CALLBACK_WRAPPERS \
 	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_INCLASS_NO_PURE_DECLS \
 	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_ENHANCED_CONSTRUCTORS \
 private: \

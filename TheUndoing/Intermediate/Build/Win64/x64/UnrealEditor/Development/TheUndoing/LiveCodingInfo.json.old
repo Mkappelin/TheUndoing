@@ -4,6 +4,7 @@
 		"Module.TheUndoing.gen.cpp.obj": [
 			"MagicianGameModeBase.gen.cpp.obj",
 			"MagicianPawn.gen.cpp.obj",
+			"MagicianPlayerController.gen.cpp.obj",
 			"PaintWidget.gen.cpp.obj",
 			"PlayerCharacter.gen.cpp.obj",
 			"TrainWidget.gen.cpp.obj",
@@ -13,8 +14,6 @@
 			"UnistrokeRectangle.gen.cpp.obj",
 			"UnistrokeResult.gen.cpp.obj",
 			"UnistrokeTemplate.gen.cpp.obj",
-			"MagicianPlayerController.gen.cpp.obj",
-			"MagicianPlayerController2.gen.cpp.obj",
 			"TheUndoing.init.gen.cpp.obj"
 		]
 	}

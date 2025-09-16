@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\theundoing\\singlefile\\magicianplayercontroller2.h.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\theundoing\\definitions.theundoing.h",
+            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\theundoingeditor\\development\\unrealed\\shareddefinitions.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_3.h",
+            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\source\\theundoing\\spell\\magicianplayercontroller2.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
