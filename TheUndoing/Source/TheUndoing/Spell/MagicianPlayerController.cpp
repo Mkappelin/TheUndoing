@@ -1,14 +1,28 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MagicianPlayerController.h"
+
+#include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/PlayerController.h"
+#include "Runtime/Engine/Classes/Engine/UserInterfaceSettings.h"
+#include "Runtime/Engine/Classes/Engine/RendererSettings.h"
+#include "UnistrokeRecognizer.h"
+#include "PaintWidget.h"
+#include "UnistrokeDataTable.h"
+#include "MagicianPawn.h"
+#include "EnhancedInputComponent.h"
+#include "Blueprint/UserWidget.h"
+#include "Engine/UserInterfaceSettings.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/LocalPlayer.h"
+#include "TimerManager.h"
+#include "Engine/Engine.h"
+
 
 AMagicianPlayerController::AMagicianPlayerController()
 {
-	Recognizer = new FUnistrokeRecognizer();
+	Recognizer = new FUnistrokeRecognizer(); // -- Maybe needs to be freed in EndPlay()
 
 	static ConstructorHelpers::FObjectFinder<UDataTable> UnistrokeTemplatesTable(TEXT("DataTable'/Game/DataTables/Templates.Templates'"));
-
 	if (UnistrokeTemplatesTable.Succeeded())
 	{
 		UnistrokeTable = UnistrokeTemplatesTable.Object;
@@ -23,38 +37,8 @@ void AMagicianPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Create Paint Widget
-	PaintWidget = CreateWidget<UPaintWidget>(this, UPaintWidget::StaticClass());
-	if (PaintWidget != nullptr)
-	{
-		GEngine->AddOnScreenDebugMessage(
-			-1,                     // Key (-1 means "new message")
-			5.f,                    // Display time in seconds
-			FColor::Green,          // Text color
-			TEXT("Paint widget made") // Message
-		);
-
-		PaintWidget->AddToViewport();
-		PaintWidget->SetVisibility(ESlateVisibility::Visible);
-	}
-
-	// Create Train Widget
-	TrainWidget = CreateWidget<UUserWidget>(this, TrainWidgetClass);
-	if (TrainWidget != nullptr)
-	{
-		if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				-1,                     // Key (-1 means "new message")
-				5.f,                    // Display time in seconds
-				FColor::Green,          // Text color
-				TEXT("Train widget made") // Message
-			);
-		}
-
-		TrainWidget->AddToViewport();
-		HideTrainWidget();
-	}
+	// Defer widget creation until we have a LocalPlayer (fixes: "no attached player")
+	TryInitUI();
 
 	FInputModeGameAndUI InputMode;
 	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
@@ -68,16 +52,64 @@ void AMagicianPlayerController::BeginPlay()
 	CurrentAction = Action::Idle;
 }
 
+void AMagicianPlayerController::TryInitUI()
+{
+	// Only the owning client should create HUD widgets
+	if (!IsLocalController())
+		return;
+
+	// We need a LocalPlayer before CreateWidget(this, ...)
+	if (!GetLocalPlayer())
+	{
+		// Try again next tick; the LocalPlayer arrives a frame later in some cases
+		GetWorldTimerManager().SetTimerForNextTick(this, &AMagicianPlayerController::TryInitUI);
+		return;
+	}
+
+	// Paint widget
+	if (!PaintWidget)
+	{
+		// Keep your previous StaticClass fallback if you don’t want PaintWidgetClass:
+		// PaintWidget = CreateWidget<UPaintWidget>(this, UPaintWidget::StaticClass());
+		if (PaintWidgetClass)
+			PaintWidget = CreateWidget<UPaintWidget>(this, PaintWidgetClass);
+		else
+			PaintWidget = CreateWidget<UPaintWidget>(this, UPaintWidget::StaticClass());
+
+		if (PaintWidget)
+		{
+			PaintWidget->AddToViewport();
+			PaintWidget->SetVisibility(ESlateVisibility::Visible);  // you had this default
+		}
+	}
+
+	// Train widget
+	if (!TrainWidget && TrainWidgetClass)
+	{
+		TrainWidget = CreateWidget<UUserWidget>(this, TrainWidgetClass);
+		if (TrainWidget)
+		{
+			TrainWidget->AddToViewport();
+			HideTrainWidget(); // keep your behavior
+		}
+	}
+}
+
 void AMagicianPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	// Legacy input (Maybe needs conversion to EIC)
-	check(InputComponent);
+	if (!InputComponent)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("MagicianPlayerController: No InputComponent found yet!"));
+		return;
+	}
+
 	InputComponent->BindAction("PaintButton", IE_Pressed, this, &AMagicianPlayerController::PressedToPaint);
 	InputComponent->BindAction("PaintButton", IE_Released, this, &AMagicianPlayerController::ReleasedToPaint);
 	InputComponent->BindKey(EKeys::T, IE_Pressed, this, &AMagicianPlayerController::TogglePaintMode);
 }
+
 
 void AMagicianPlayerController::Tick(float DeltaTime)
 {
@@ -85,16 +117,21 @@ void AMagicianPlayerController::Tick(float DeltaTime)
 
 	if (CurrentAction == Action::Paint)
 	{
+		// Just to be sure
+		if (!PaintWidget || !GEngine || !GEngine->GameViewport || !GEngine->GameViewport->Viewport) 
+			return; 
+
 		const TArray<FVector2D> Points = PaintWidget->GetPoints();
+
 		float MouseX = 0.0f;
 		float MouseY = 0.0f;
-
 		GetMousePosition(MouseX, MouseY);
 
 		const FVector2D MousePoint = FVector2D(MouseX, MouseY);
 		const FVector2D viewportSize = FVector2D(GEngine->GameViewport->Viewport->GetSizeXY());
 		const float viewportScale = GetDefault<UUserInterfaceSettings>(UUserInterfaceSettings::StaticClass())->GetDPIScaleBasedOnSize(FIntPoint(viewportSize.X, viewportSize.Y));
 		const FVector2D ScaledPoint = MousePoint / viewportScale;
+
 		const FVector2D LastPoint = Points.Num() > 0 ? Points.Last() : ScaledPoint;
 		const bool IsNewPoint = !LastPoint.Equals(ScaledPoint, 1.0f);
 
@@ -107,38 +144,24 @@ void AMagicianPlayerController::Tick(float DeltaTime)
 
 void AMagicianPlayerController::PressedToPaint()
 {
-	if (bIsPaintingMode && CurrentAction != Action::Train)
+	if (!bIsPaintingMode)
 	{
+		// Notifies that painting mode is off
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, TEXT("Press T to enable painting mode"));
+		return;
+	}
+
+	if (CurrentAction != Action::Train)
+	{
+		// Ensure widget exists
+		if (!PaintWidget) { TryInitUI(); if (!PaintWidget) return; }
+
+		// Ensure pawn exists (avoid “pending kill” access, whatever that means)
+		if (!IsValid(GetPawn())) return;
+
 		CurrentAction = Action::Paint;
 	}
-	// Optionally add else case to handle when trying to paint without toggle
-	else if (!bIsPaintingMode)
-	{
-		// Optional: Provide feedback that painting mode is off
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, TEXT("Press T to enable painting mode"));
-	}
 }
-
-void AMagicianPlayerController::TogglePaintMode()
-{
-	bIsPaintingMode = !bIsPaintingMode;
-
-	// Optional: Add visual feedback or debug message
-	if (bIsPaintingMode)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT("Painting Mode: ON"));
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("Painting Mode: OFF"));
-		// Optionally reset current action if painting was active
-		if (CurrentAction == Action::Paint)
-		{
-			CurrentAction = Action::Idle; // Or whatever your default action should be
-		}
-	}
-}
-
 void AMagicianPlayerController::ReleasedToPaint()
 {
 	if (CurrentAction == Action::Paint)
@@ -150,12 +173,99 @@ void AMagicianPlayerController::ReleasedToPaint()
 		Spell();
 		break;
 	case  Action::Train:
-		if (PaintWidget->GetPoints().Num() > 2)
+		if (PaintWidget && PaintWidget->GetPoints().Num() > 2)
 			ShowTrainWidget();
 		break;
 	default:
 		break;
 	}
+}
+
+void AMagicianPlayerController::TogglePaintMode()
+{
+	if (bIsPaintingMode) 
+	{ 
+
+
+		ExitPaintMode(0.5f); 
+	}
+	else 
+	{ 
+		EnterPaintMode(nullptr, 0.5f); 
+	}
+}
+
+
+void AMagicianPlayerController::EnterPaintMode(AActor* NewCamera, float BlendTime)
+{
+	if (bIsPaintingMode) return;
+	bIsPaintingMode = true;
+
+	// Save current view target so we can restore later
+	SavedViewTarget = GetViewTarget();
+
+	// Optional camera blend (debugging)
+	if (NewCamera)
+	{
+		SetViewTargetWithBlend(NewCamera, BlendTime, EViewTargetBlendFunction::VTBlend_Cubic);
+	}
+
+	// Safety check, init UI
+	TryInitUI();
+	if (PaintWidget)
+		PaintWidget->SetVisibility(ESlateVisibility::Visible);
+
+	// Cursor + input mode
+	bShowMouseCursor = true;
+	FInputModeGameAndUI Mode;
+	Mode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+	Mode.SetHideCursorDuringCapture(false);
+	SetInputMode(Mode);
+
+	// Disable gameplay movement on server
+	Server_SetPlayerCanMove(false);
+
+	// If your Character has SetInputEnabled(bool), you can also remove gameplay context locally:
+	//if (APawn* P = GetPawn())
+	//{
+	//	if (auto* PC = Cast<APlayerCharacter>(P))
+	//		PC->SetInputEnabled(false);  // uses your existing helper in Character
+	//}
+}
+
+void AMagicianPlayerController::ExitPaintMode(float BlendTime)
+{
+	if (!bIsPaintingMode) return;
+	bIsPaintingMode = false;
+
+	// Restore view target
+	if (AActor* Saved = SavedViewTarget.Get())
+		SetViewTargetWithBlend(Saved, BlendTime, EViewTargetBlendFunction::VTBlend_Cubic);
+	else if (APawn* P = GetPawn())
+		SetViewTarget(P);
+	SavedViewTarget = nullptr;
+
+	// Hide UI
+	if (PaintWidget)
+		PaintWidget->SetVisibility(ESlateVisibility::Hidden);
+
+	// Back to game-only input mode if you want
+	bShowMouseCursor = false;
+	SetInputMode(FInputModeGameOnly{});
+
+	// Re-enable movement on server
+	Server_SetPlayerCanMove(true);
+
+	// Re-enable gameplay input mapping on local
+	/*if (APawn* P = GetPawn())
+	{
+		if (auto* PC = Cast<APlayerCharacter>(P))
+			PC->SetInputEnabled(true);
+	}*/
+
+	// If you were painting when toggled off
+	if (CurrentAction == Action::Paint)
+		CurrentAction = Action::Idle;
 }
 
 // TODO: Implement spell event
@@ -260,8 +370,28 @@ void AMagicianPlayerController::HideTrainWidget()
 {
 	if (TrainWidget != nullptr)
 	{
-		PaintWidget->RemoveAllPoints();
+		if (PaintWidget) PaintWidget->RemoveAllPoints(); // enGUARD!
+
 		TrainWidget->SetVisibility(ESlateVisibility::Hidden);
 		CurrentAction = Action::Idle;
+	}
+}
+
+void AMagicianPlayerController::Server_SetPlayerCanMove_Implementation(bool bCanMove)
+{
+	if (ACharacter* C = Cast<ACharacter>(GetPawn()))
+	{
+		if (bCanMove) C->GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+		else          C->GetCharacterMovement()->DisableMovement();
+	}
+}
+
+void AMagicianPlayerController::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	if (Recognizer)
+	{
+		delete Recognizer;
+		Recognizer = nullptr;
 	}
 }

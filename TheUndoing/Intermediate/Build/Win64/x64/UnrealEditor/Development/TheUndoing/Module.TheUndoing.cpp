@@ -20,6 +20,7 @@
 #include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Private/TestCharacter.cpp"
 #include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Private/TestGameMode.cpp"
 #include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Private/TestPlayerController.cpp"
+#include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Spell/MagicianGameModeBase.cpp"
 #include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Spell/MagicianPawn.cpp"
 #include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Spell/MagicianPlayerController.cpp"
 #include "C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Source/TheUndoing/Spell/PaintWidget.cpp"

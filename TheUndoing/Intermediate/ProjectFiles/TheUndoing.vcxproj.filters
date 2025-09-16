@@ -45,28 +45,10 @@
     <ClCompile Include="..\..\Source\TheUndoing\Private\PlayerCharacter.cpp">
       <Filter>Source\TheUndoing\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TheUndoing\Private\TestCharacter.cpp">
-      <Filter>Source\TheUndoing\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TheUndoing\Private\TestGameMode.cpp">
-      <Filter>Source\TheUndoing\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TheUndoing\Private\TestPlayerController.cpp">
-      <Filter>Source\TheUndoing\Private</Filter>
-    </ClCompile>
     <Filter Include="Source\TheUndoing\Public">
       <UniqueIdentifier>{DF4FBB84-FEDA-384E-9E84-7534828EA4A5}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\TheUndoing\Public\PlayerCharacter.h">
-      <Filter>Source\TheUndoing\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TheUndoing\Public\TestCharacter.h">
-      <Filter>Source\TheUndoing\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TheUndoing\Public\TestGameMode.h">
-      <Filter>Source\TheUndoing\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TheUndoing\Public\TestPlayerController.h">
       <Filter>Source\TheUndoing\Public</Filter>
     </ClInclude>
     <Filter Include="Source\TheUndoing\Spell">
@@ -88,6 +70,12 @@
       <Filter>Source\TheUndoing\Spell</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TheUndoing\Spell\MagicianPlayerController.h">
+      <Filter>Source\TheUndoing\Spell</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TheUndoing\Spell\MagicianPlayerController2.cpp">
+      <Filter>Source\TheUndoing\Spell</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TheUndoing\Spell\MagicianPlayerController2.h">
       <Filter>Source\TheUndoing\Spell</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\TheUndoing\Spell\PaintWidget.cpp">
@@ -138,10 +126,5 @@
     <ClInclude Include="..\..\Source\TheUndoing\Spell\UnistrokeTemplate.h">
       <Filter>Source\TheUndoing\Spell</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="TODO.txt">
-      <Filter>Source\TheUndoing</Filter>
-    </Text>
   </ItemGroup>
 </Project>

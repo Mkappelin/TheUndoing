@@ -4,14 +4,22 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "Runtime/Engine/Classes/Engine/UserInterfaceSettings.h"
-#include "Runtime/Engine/Classes/Engine/RendererSettings.h"
-#include "UnistrokeRecognizer.h"
-#include "PaintWidget.h"
-#include "UnistrokeDataTable.h"
-#include "MagicianPawn.h"
-#include "EnhancedInputComponent.h"
 #include "MagicianPlayerController.generated.h"
+
+// --- Forward declarations ---
+class UUserWidget;
+class UPaintWidget;
+class UDataTable;
+struct FUnistrokeRecognizer;
+
+//UENUM(BlueprintType)
+//enum class Action : uint8
+//{
+//	Idle       UMETA(DisplayName = "Idle"),
+//	Paint      UMETA(DisplayName = "Paint"),
+//	Recognize  UMETA(DisplayName = "Recognize"),
+//	Train      UMETA(DisplayName = "Train")
+//};
 
 enum Action { Idle, Paint, Recognize, Train };
 
@@ -25,31 +33,61 @@ public:
 	void TrainMode(const bool Is);
 
 	AMagicianPlayerController();
+
+	// --- Engine Overrides ---
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
-	void ShowTrainWidget();
-	void HideTrainWidget();
-	void AddTemplateToDataTable(const FString Name);
-	
-	void TogglePaintMode();
-	bool bIsPaintingMode = false;
+	// --- Public API for UI ---
+	UFUNCTION(BlueprintCallable) void TogglePaintMode();
+
+	// -- Enter/Exit paint mode used by (Could be private) -- 
+	UFUNCTION(BlueprintCallable) void EnterPaintMode(AActor* OptionalCamera = nullptr, float BlendTime = 0.5f);
+	UFUNCTION(BlueprintCallable) void ExitPaintMode(float BlendTime = 0.5f);
+
+	UFUNCTION(BlueprintCallable) void ShowTrainWidget();
+	UFUNCTION(BlueprintCallable) void HideTrainWidget();
+	UFUNCTION(BlueprintCallable) void AddTemplateToDataTable(const FString Name);
 
 protected:
+
 	virtual void SetupInputComponent() override;
 
+	// Cleanup for heap allocation
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
+	// Server-sided movement lock/unlock
+	UFUNCTION(Server, Reliable) void Server_SetPlayerCanMove(bool bCanMove);
+	
+	// --- Lazy init for UI ---
+	UFUNCTION() void TryInitUI();
+
 private:
+
+	// --- State ---
+	UPROPERTY() bool bIsPaintingMode;
+	UPROPERTY() TWeakObjectPtr<AActor> SavedViewTarget;
+
+	Action CurrentAction = Action::Idle;
+	UPROPERTY() bool   IsTraining;
+
+	// --- UI (classes + live widgets) ---
+	UPROPERTY(EditDefaultsOnly, Category = "UI")
+	TSubclassOf<UUserWidget>  TrainWidgetClass; // maybe keep StaticClass fallback
+
+	UPROPERTY(EditDefaultsOnly, Category = "UI")
+	TSubclassOf<UPaintWidget> PaintWidgetClass; // maybe keep StaticClass fallback
+
+	UPROPERTY() UUserWidget* TrainWidget;
+	UPROPERTY() UPaintWidget* PaintWidget;
+
+	// --- Data / recognition ---
+	UPROPERTY() UDataTable* UnistrokeTable; 
+	FUnistrokeRecognizer* Recognizer;		// heap-owned; freed in EndPlay
+
+	// --- Private helpers ---
 	void PressedToPaint();
 	void ReleasedToPaint();
 	void LoadTemplates();
 	void Spell();
-
-	UDataTable* UnistrokeTable;
-	UPaintWidget* PaintWidget;
-	UUserWidget* TrainWidget;
-	TSubclassOf<UUserWidget> TrainWidgetClass;
-	FUnistrokeRecognizer* Recognizer;
-	int CurrentAction;
-	bool IsTraining;
-
 };
