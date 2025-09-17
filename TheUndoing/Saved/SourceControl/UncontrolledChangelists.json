@@ -5,48 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-<<<<<<< HEAD
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/BP_MagicianGameModeBase.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/BP_MagicianPawn.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/BP_MagicianPlayerController.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/WBP_Train.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/DataTables/Templates.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Scenes/SpellTest1.umap",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/TopDown/MI_Colorway.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/SpellEventActor.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/Player/BP_NeoPlayerCharacter.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IMC_Test.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IA_Movement.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IA_Jump.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IA_Sprint.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IA_Look.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Meshes/SM_ChamferCube.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Meshes/SM_Cylinder.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Meshes/SM_QuarterCylinder.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Interactable/Target/Assets/SM_TargetBaseMesh.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Interactable/Door/Assets/Meshes/SM_Door.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Interactable/Door/Assets/Meshes/SM_DoorFrame_Corner.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Interactable/Door/Assets/Meshes/SM_DoorFrame_Edge.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Interactable/JumpPad/Assets/Meshes/SM_CircularBand.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/LevelPrototyping/Interactable/JumpPad/Assets/Meshes/SM_CircularGlow.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/BP_Circle.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/BP_Triangle.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/BP_TestGameMode.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/BP_TestGameMode.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/BP_NeoPlayerCharacter.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/SpellDrawing/BP_NeoPlayerCharacter.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Scenes/SpellTest.umap",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/Blueprints/WBP_TrainWidget.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/WBP_TrainWidget.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/BP_MagicianPlayerController.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/BP_MagicianPawn.uasset",
-				"C:/Users/neofe/Documents/GitHub/UnrealEngine/TheUndoing/TheUndoing/Content/BP_MagicianGameModeBase.uasset",
-				"C:/Users/marco/OneDrive/Dokument/Unreal Projects/TheUndoing/Content/Scenes/Toturial.umap"
-=======
-				"C:/Users/marco/OneDrive/Dokument/Unreal Projects/TheUndoing/Content/Scenes/Toturial.umap",
-				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Scenes/Toturial.umap",
-				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/BP_Player.uasset"
->>>>>>> Marco
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IA_DamagePlayer.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IA_DamageEnemy.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IMC_Test.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/BP_Player.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/BP_StatsComponent.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Scenes/SpellTest1.umap"
 			]
 		}
 	]
