@@ -182,8 +182,6 @@ void AMagicianPlayerController::TogglePaintMode()
 {
 	if (bIsPaintingMode) 
 	{ 
-
-
 		ExitPaintMode(0.5f); 
 	}
 	else 
@@ -267,19 +265,30 @@ void AMagicianPlayerController::ExitPaintMode(float BlendTime)
 		CurrentAction = Action::Idle;
 }
 
-// TODO: Implement spell event
 void AMagicianPlayerController::Spell()
 {
 	TArray<FVector2D>CurrentPoints = PaintWidget->GetPoints();
 	FUnistrokeResult Result = Recognizer->Recognize(CurrentPoints, false);
 
-	if (Result.Score < 0.8f)
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "No Magic", true, FVector2D(2, 2));
-	else {
+	bool bSpellSucceeded = Result.Score >= 0.8f;
+
+	if (bSpellSucceeded)
+	{
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Result.Name, true, FVector2D(2, 2));
-		/*AMagicianPawn* MagicianaPawn = Cast<AMagicianPawn>(GetPawn());
-		MagicianaPawn->SpawnShape(Result.Name);*/
+
+		ExitPaintMode();
 	}
+	else 
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "No Magic", true, FVector2D(2, 2));	
+	}
+
+	// Send package to listening blueprints
+	FSpellRecognitionResult Payload;
+	Payload.bSuccess = bSpellSucceeded;
+	Payload.Name = Result.Name;
+	Payload.Score = Result.Score;
+	OnSpellRecognized.Broadcast(Payload);
 
 	PaintWidget->RemoveAllPoints();
 

@@ -12,16 +12,24 @@ class UPaintWidget;
 class UDataTable;
 struct FUnistrokeRecognizer;
 
-//UENUM(BlueprintType)
-//enum class Action : uint8
-//{
-//	Idle       UMETA(DisplayName = "Idle"),
-//	Paint      UMETA(DisplayName = "Paint"),
-//	Recognize  UMETA(DisplayName = "Recognize"),
-//	Train      UMETA(DisplayName = "Train")
-//};
+USTRUCT(BlueprintType)
+struct FSpellRecognitionResult
+{
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bSuccess = false;
+
+	UPROPERTY(BlueprintReadOnly)
+	FString Name;
+
+	UPROPERTY(BlueprintReadOnly)
+	float Score = 0.f;
+};
 
 enum Action { Idle, Paint, Recognize, Train };
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSpellRecognized, const FSpellRecognitionResult&, Result);
 
 UCLASS()
 class THEUNDOING_API AMagicianPlayerController : public APlayerController
@@ -34,6 +42,9 @@ public:
 
 	AMagicianPlayerController();
 
+	UPROPERTY(BlueprintAssignable, Category = "Spells")
+	FOnSpellRecognized OnSpellRecognized;
+
 	// --- Engine Overrides ---
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
@@ -41,7 +52,6 @@ public:
 	// --- Public API for UI ---
 	UFUNCTION(BlueprintCallable) void TogglePaintMode();
 
-	// -- Enter/Exit paint mode used by (Could be private) -- 
 	UFUNCTION(BlueprintCallable) void EnterPaintMode(AActor* OptionalCamera = nullptr, float BlendTime = 0.5f);
 	UFUNCTION(BlueprintCallable) void ExitPaintMode(float BlendTime = 0.5f);
 
@@ -69,7 +79,7 @@ private:
 	UPROPERTY() TWeakObjectPtr<AActor> SavedViewTarget;
 
 	Action CurrentAction = Action::Idle;
-	UPROPERTY() bool   IsTraining;
+	UPROPERTY() bool IsTraining;
 
 	// --- UI (classes + live widgets) ---
 	UPROPERTY(EditDefaultsOnly, Category = "UI")

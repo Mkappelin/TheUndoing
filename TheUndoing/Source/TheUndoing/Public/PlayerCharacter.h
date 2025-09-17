@@ -34,6 +34,8 @@ public:
 	bool IsInputEnabled() const { return bInputEnabled; }
 
 protected:
+	virtual void FaceRotation(FRotator NewControlRotation, float DeltaTime = 0.f) override;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

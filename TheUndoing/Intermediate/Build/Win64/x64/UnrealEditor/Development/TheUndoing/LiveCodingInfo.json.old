@@ -7,14 +7,14 @@
 			"MagicianPlayerController.gen.cpp.obj",
 			"PaintWidget.gen.cpp.obj",
 			"PlayerCharacter.gen.cpp.obj",
+			"TheUndoing.init.gen.cpp.obj",
 			"TrainWidget.gen.cpp.obj",
 			"UnistrokeDataTable.gen.cpp.obj",
 			"UnistrokePoint.gen.cpp.obj",
 			"UnistrokeRecognizer.gen.cpp.obj",
 			"UnistrokeRectangle.gen.cpp.obj",
 			"UnistrokeResult.gen.cpp.obj",
-			"UnistrokeTemplate.gen.cpp.obj",
-			"TheUndoing.init.gen.cpp.obj"
+			"UnistrokeTemplate.gen.cpp.obj"
 		]
 	}
 }

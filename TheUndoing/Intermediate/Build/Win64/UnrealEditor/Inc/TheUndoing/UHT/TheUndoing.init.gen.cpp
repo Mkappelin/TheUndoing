@@ -7,23 +7,27 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTheUndoing_init() {}
+	THEUNDOING_API UFunction* Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_TheUndoing;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_TheUndoing()
 	{
 		if (!Z_Registration_Info_UPackage__Script_TheUndoing.OuterSingleton)
 		{
+			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature,
+			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
 				"/Script/TheUndoing",
-				nullptr,
-				0,
+				SingletonFuncArray,
+				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x6B32DB02,
-				0xC1CA643A,
+				0x34DAA838,
+				0x12F321CC,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_TheUndoing.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_TheUndoing.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_TheUndoing(Z_Construct_UPackage__Script_TheUndoing, TEXT("/Script/TheUndoing"), Z_Registration_Info_UPackage__Script_TheUndoing, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6B32DB02, 0xC1CA643A));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_TheUndoing(Z_Construct_UPackage__Script_TheUndoing, TEXT("/Script/TheUndoing"), Z_Registration_Info_UPackage__Script_TheUndoing, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x34DAA838, 0x12F321CC));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

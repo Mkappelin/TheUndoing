@@ -19,9 +19,135 @@ ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianPlayerController();
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianPlayerController_NoRegister();
 THEUNDOING_API UClass* Z_Construct_UClass_UPaintWidget_NoRegister();
+THEUNDOING_API UFunction* Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature();
+THEUNDOING_API UScriptStruct* Z_Construct_UScriptStruct_FSpellRecognitionResult();
 UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TheUndoing();
 // ********** End Cross Module References **********************************************************
+
+// ********** Begin ScriptStruct FSpellRecognitionResult *******************************************
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FSpellRecognitionResult;
+class UScriptStruct* FSpellRecognitionResult::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_FSpellRecognitionResult.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_FSpellRecognitionResult.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FSpellRecognitionResult, (UObject*)Z_Construct_UPackage__Script_TheUndoing(), TEXT("SpellRecognitionResult"));
+	}
+	return Z_Registration_Info_UScriptStruct_FSpellRecognitionResult.OuterSingleton;
+}
+struct Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bSuccess_MetaData[] = {
+		{ "Category", "SpellRecognitionResult" },
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[] = {
+		{ "Category", "SpellRecognitionResult" },
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Score_MetaData[] = {
+		{ "Category", "SpellRecognitionResult" },
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_bSuccess_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bSuccess;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_Name;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Score;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static void* NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FSpellRecognitionResult>();
+	}
+	static const UECodeGen_Private::FStructParams StructParams;
+};
+void Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_bSuccess_SetBit(void* Obj)
+{
+	((FSpellRecognitionResult*)Obj)->bSuccess = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_bSuccess = { "bSuccess", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FSpellRecognitionResult), &Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_bSuccess_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bSuccess_MetaData), NewProp_bSuccess_MetaData) };
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_Name = { "Name", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSpellRecognitionResult, Name), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Name_MetaData), NewProp_Name_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_Score = { "Score", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSpellRecognitionResult, Score), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Score_MetaData), NewProp_Score_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_bSuccess,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_Name,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewProp_Score,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::StructParams = {
+	(UObject* (*)())Z_Construct_UPackage__Script_TheUndoing,
+	nullptr,
+	&NewStructOps,
+	"SpellRecognitionResult",
+	Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::PropPointers,
+	UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::PropPointers),
+	sizeof(FSpellRecognitionResult),
+	alignof(FSpellRecognitionResult),
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	EStructFlags(0x00000001),
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::Struct_MetaDataParams)
+};
+UScriptStruct* Z_Construct_UScriptStruct_FSpellRecognitionResult()
+{
+	if (!Z_Registration_Info_UScriptStruct_FSpellRecognitionResult.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FSpellRecognitionResult.InnerSingleton, Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::StructParams);
+	}
+	return Z_Registration_Info_UScriptStruct_FSpellRecognitionResult.InnerSingleton;
+}
+// ********** End ScriptStruct FSpellRecognitionResult *********************************************
+
+// ********** Begin Delegate FOnSpellRecognized ****************************************************
+struct Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics
+{
+	struct _Script_TheUndoing_eventOnSpellRecognized_Parms
+	{
+		FSpellRecognitionResult Result;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Result_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_Result;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FDelegateFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::NewProp_Result = { "Result", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_TheUndoing_eventOnSpellRecognized_Parms, Result), Z_Construct_UScriptStruct_FSpellRecognitionResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Result_MetaData), NewProp_Result_MetaData) }; // 1310116669
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::NewProp_Result,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FDelegateFunctionParams Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UPackage__Script_TheUndoing, nullptr, "OnSpellRecognized__DelegateSignature", Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::_Script_TheUndoing_eventOnSpellRecognized_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00530000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::_Script_TheUndoing_eventOnSpellRecognized_Parms) < MAX_uint16);
+UFunction* Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUDelegateFunction(&ReturnFunction, Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnSpellRecognized_DelegateWrapper(const FMulticastScriptDelegate& OnSpellRecognized, FSpellRecognitionResult const& Result)
+{
+	struct _Script_TheUndoing_eventOnSpellRecognized_Parms
+	{
+		FSpellRecognitionResult Result;
+	};
+	_Script_TheUndoing_eventOnSpellRecognized_Parms Parms;
+	Parms.Result=Result;
+	OnSpellRecognized.ProcessMulticastDelegate<UObject>(&Parms);
+}
+// ********** End Delegate FOnSpellRecognized ******************************************************
 
 // ********** Begin Class AMagicianPlayerController Function AddTemplateToDataTable ****************
 struct Z_Construct_UFunction_AMagicianPlayerController_AddTemplateToDataTable_Statics
@@ -78,15 +204,9 @@ struct Z_Construct_UFunction_AMagicianPlayerController_EnterPaintMode_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// -- Enter/Exit paint mode used by (Could be private) -- \n" },
-#endif
 		{ "CPP_Default_BlendTime", "0.500000" },
 		{ "CPP_Default_OptionalCamera", "None" },
 		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "-- Enter/Exit paint mode used by (Could be private) --" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OptionalCamera;
@@ -457,6 +577,10 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 		{ "IncludePath", "Spell/MagicianPlayerController.h" },
 		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnSpellRecognized_MetaData[] = {
+		{ "Category", "Spells" },
+		{ "ModuleRelativePath", "Spell/MagicianPlayerController.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsPaintingMode_MetaData[] = {
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// --- State ---\n" },
@@ -516,6 +640,7 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 #endif
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSpellRecognized;
 	static void NewProp_bIsPaintingMode_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsPaintingMode;
 	static const UECodeGen_Private::FWeakObjectPropertyParams NewProp_SavedViewTarget;
@@ -530,7 +655,7 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMagicianPlayerController_AddTemplateToDataTable, "AddTemplateToDataTable" }, // 4154160942
-		{ &Z_Construct_UFunction_AMagicianPlayerController_EnterPaintMode, "EnterPaintMode" }, // 722284997
+		{ &Z_Construct_UFunction_AMagicianPlayerController_EnterPaintMode, "EnterPaintMode" }, // 3478247539
 		{ &Z_Construct_UFunction_AMagicianPlayerController_ExitPaintMode, "ExitPaintMode" }, // 1274517538
 		{ &Z_Construct_UFunction_AMagicianPlayerController_HidePaintWidget, "HidePaintWidget" }, // 504123192
 		{ &Z_Construct_UFunction_AMagicianPlayerController_HideTrainWidget, "HideTrainWidget" }, // 200876
@@ -546,6 +671,7 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_OnSpellRecognized = { "OnSpellRecognized", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMagicianPlayerController, OnSpellRecognized), Z_Construct_UDelegateFunction_TheUndoing_OnSpellRecognized__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnSpellRecognized_MetaData), NewProp_OnSpellRecognized_MetaData) }; // 532693787
 void Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode_SetBit(void* Obj)
 {
 	((AMagicianPlayerController*)Obj)->bIsPaintingMode = 1;
@@ -563,6 +689,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMagicianPlaye
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_PaintWidget = { "PaintWidget", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMagicianPlayerController, PaintWidget), Z_Construct_UClass_UPaintWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PaintWidget_MetaData), NewProp_PaintWidget_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_UnistrokeTable = { "UnistrokeTable", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMagicianPlayerController, UnistrokeTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_UnistrokeTable_MetaData), NewProp_UnistrokeTable_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMagicianPlayerController_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_OnSpellRecognized,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_SavedViewTarget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_IsTraining,
@@ -608,13 +735,16 @@ AMagicianPlayerController::~AMagicianPlayerController() {}
 // ********** Begin Registration *******************************************************************
 struct Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics
 {
+	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
+		{ FSpellRecognitionResult::StaticStruct, Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewStructOps, TEXT("SpellRecognitionResult"), &Z_Registration_Info_UScriptStruct_FSpellRecognitionResult, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSpellRecognitionResult), 1310116669U) },
+	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMagicianPlayerController, AMagicianPlayerController::StaticClass, TEXT("AMagicianPlayerController"), &Z_Registration_Info_UClass_AMagicianPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPlayerController), 2692618913U) },
+		{ Z_Construct_UClass_AMagicianPlayerController, AMagicianPlayerController::StaticClass, TEXT("AMagicianPlayerController"), &Z_Registration_Info_UClass_AMagicianPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPlayerController), 1290525524U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_2123653816(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_999341989(TEXT("/Script/TheUndoing"),
 	Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics::ClassInfo),
-	nullptr, 0,
+	Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h__Script_TheUndoing_Statics::ScriptStructInfo),
 	nullptr, 0);
 // ********** End Registration *********************************************************************
 

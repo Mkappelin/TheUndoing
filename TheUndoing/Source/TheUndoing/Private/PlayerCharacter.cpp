@@ -147,3 +147,11 @@ void APlayerCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
+void APlayerCharacter::FaceRotation(FRotator NewControlRotation, float DeltaTime)
+{
+	if (bInputEnabled) 
+	{
+		Super::FaceRotation(NewControlRotation, DeltaTime);
+	}
+	
+}

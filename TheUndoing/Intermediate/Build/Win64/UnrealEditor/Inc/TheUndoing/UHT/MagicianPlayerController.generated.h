@@ -17,9 +17,26 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class AActor;
+struct FSpellRecognitionResult;
+
+// ********** Begin ScriptStruct FSpellRecognitionResult *******************************************
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_18_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics; \
+	THEUNDOING_API static class UScriptStruct* StaticStruct();
+
+
+struct FSpellRecognitionResult;
+// ********** End ScriptStruct FSpellRecognitionResult *********************************************
+
+// ********** Begin Delegate FOnSpellRecognized ****************************************************
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_32_DELEGATE \
+THEUNDOING_API void FOnSpellRecognized_DelegateWrapper(const FMulticastScriptDelegate& OnSpellRecognized, FSpellRecognitionResult const& Result);
+
+
+// ********** End Delegate FOnSpellRecognized ******************************************************
 
 // ********** Begin Class AMagicianPlayerController ************************************************
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execTryInitUI); \
 	DECLARE_FUNCTION(execAddTemplateToDataTable); \
 	DECLARE_FUNCTION(execHidePaintWidget); \
@@ -34,7 +51,7 @@ class AActor;
 
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianPlayerController_NoRegister();
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_INCLASS_NO_PURE_DECLS \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMagicianPlayerController(); \
 	friend struct Z_Construct_UClass_AMagicianPlayerController_Statics; \
@@ -45,7 +62,7 @@ public: \
 	DECLARE_SERIALIZER(AMagicianPlayerController)
 
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_ENHANCED_CONSTRUCTORS \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMagicianPlayerController(AMagicianPlayerController&&) = delete; \
 	AMagicianPlayerController(const AMagicianPlayerController&) = delete; \
@@ -55,13 +72,13 @@ public: \
 	NO_API virtual ~AMagicianPlayerController();
 
 
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_26_PROLOG
-#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_GENERATED_BODY \
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_34_PROLOG
+#define FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_INCLASS_NO_PURE_DECLS \
-	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_29_ENHANCED_CONSTRUCTORS \
+	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_INCLASS_NO_PURE_DECLS \
+	FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
