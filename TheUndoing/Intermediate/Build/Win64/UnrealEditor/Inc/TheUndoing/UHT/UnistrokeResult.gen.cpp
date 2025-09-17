@@ -63,15 +63,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FUnistrokeResult()
 // ********** End ScriptStruct FUnistrokeResult ****************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FUnistrokeResult::StaticStruct, Z_Construct_UScriptStruct_FUnistrokeResult_Statics::NewStructOps, TEXT("UnistrokeResult"), &Z_Registration_Info_UScriptStruct_FUnistrokeResult, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUnistrokeResult), 3039601844U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_3064585086(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_3064585086(TEXT("/Script/TheUndoing"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_neofe_Documents_GitHub_UnrealEngine_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h__Script_TheUndoing_Statics::ScriptStructInfo),
 	nullptr, 0);
 // ********** End Registration *********************************************************************
 
