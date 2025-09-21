@@ -63,15 +63,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FUnistrokeRecognizer()
 // ********** End ScriptStruct FUnistrokeRecognizer ************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FUnistrokeRecognizer::StaticStruct, Z_Construct_UScriptStruct_FUnistrokeRecognizer_Statics::NewStructOps, TEXT("UnistrokeRecognizer"), &Z_Registration_Info_UScriptStruct_FUnistrokeRecognizer, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUnistrokeRecognizer), 1233061843U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_2986981530(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_2986981530(TEXT("/Script/TheUndoing"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeRecognizer_h__Script_TheUndoing_Statics::ScriptStructInfo),
 	nullptr, 0);
 // ********** End Registration *********************************************************************
 

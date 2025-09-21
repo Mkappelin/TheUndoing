@@ -118,14 +118,14 @@ AMagicianPawn::~AMagicianPawn() {}
 // ********** End Class AMagicianPawn **************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AMagicianPawn, AMagicianPawn::StaticClass, TEXT("AMagicianPawn"), &Z_Registration_Info_UClass_AMagicianPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPawn), 2005795144U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_4167414824(TEXT("/Script/TheUndoing"),
-	Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_4167414824(TEXT("/Script/TheUndoing"),
+	Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h__Script_TheUndoing_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

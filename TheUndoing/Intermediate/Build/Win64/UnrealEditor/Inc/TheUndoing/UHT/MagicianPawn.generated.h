@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class AMagicianPawn ************************************************************
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianPawn_NoRegister();
 
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMagicianPawn(); \
 	friend struct Z_Construct_UClass_AMagicianPawn_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(AMagicianPawn)
 
 
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMagicianPawn(AMagicianPawn&&) = delete; \
 	AMagicianPawn(const AMagicianPawn&) = delete; \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~AMagicianPawn();
 
 
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_9_PROLOG
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_GENERATED_BODY \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_9_PROLOG
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_INCLASS_NO_PURE_DECLS \
+	FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,6 +55,6 @@ class AMagicianPawn;
 // ********** End Class AMagicianPawn **************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h
+#define CURRENT_FILE_ID FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPawn_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

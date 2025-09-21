@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class UPaintWidget *************************************************************
 THEUNDOING_API UClass* Z_Construct_UClass_UPaintWidget_NoRegister();
 
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUPaintWidget(); \
 	friend struct Z_Construct_UClass_UPaintWidget_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(UPaintWidget)
 
 
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UPaintWidget(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -42,12 +42,12 @@ public: \
 	NO_API virtual ~UPaintWidget();
 
 
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_9_PROLOG
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_GENERATED_BODY \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_9_PROLOG
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_INCLASS_NO_PURE_DECLS \
+	FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -57,6 +57,6 @@ class UPaintWidget;
 // ********** End Class UPaintWidget ***************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h
+#define CURRENT_FILE_ID FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

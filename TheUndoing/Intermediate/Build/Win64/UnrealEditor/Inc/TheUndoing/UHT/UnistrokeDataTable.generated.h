@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin ScriptStruct FUnistrokeDataTable ***********************************************
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h_12_GENERATED_BODY \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h_12_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FUnistrokeDataTable_Statics; \
 	static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -27,6 +27,6 @@ struct FUnistrokeDataTable;
 // ********** End ScriptStruct FUnistrokeDataTable *************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h
+#define CURRENT_FILE_ID FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

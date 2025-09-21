@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin ScriptStruct FUnistrokeResult **************************************************
-#define FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h_9_GENERATED_BODY \
+#define FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h_9_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FUnistrokeResult_Statics; \
 	static class UScriptStruct* StaticStruct();
 
@@ -26,6 +26,6 @@ struct FUnistrokeResult;
 // ********** End ScriptStruct FUnistrokeResult ****************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_marco_OneDrive_Dokument_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h
+#define CURRENT_FILE_ID FID_Users_altun_Documents_Unreal_Projects_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeResult_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

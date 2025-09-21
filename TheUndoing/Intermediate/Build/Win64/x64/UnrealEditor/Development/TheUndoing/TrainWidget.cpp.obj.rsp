@@ -1,12 +1,12 @@
-"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Spell/TrainWidget.cpp"
-@"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TheUndoing.Shared.rsp"
-/FI"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/TheUndoingEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h"
-/FI"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/Definitions.TheUndoing.h"
-/Yu"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/TheUndoingEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h"
-/Fp"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/TheUndoingEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h.pch"
-/Fo"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TrainWidget.cpp.obj"
-/experimental:log "C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TrainWidget.cpp.sarif"
-/sourceDependencies "C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TrainWidget.cpp.dep.json"
+"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Source/TheUndoing/Spell/TrainWidget.cpp"
+@"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TheUndoing.Shared.rsp"
+/FI"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/TheUndoingEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h"
+/FI"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/Definitions.TheUndoing.h"
+/Yu"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/TheUndoingEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h"
+/Fp"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/TheUndoingEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_3.h.pch"
+/Fo"C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TrainWidget.cpp.obj"
+/experimental:log "C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TrainWidget.cpp.sarif"
+/sourceDependencies "C:/Users/altun/Documents/Unreal Projects/TheUndoing/TheUndoing/Intermediate/Build/Win64/x64/UnrealEditor/Development/TheUndoing/TrainWidget.cpp.dep.json"
 /d2ssa-cfg-question-
 /Zc:inline
 /nologo
