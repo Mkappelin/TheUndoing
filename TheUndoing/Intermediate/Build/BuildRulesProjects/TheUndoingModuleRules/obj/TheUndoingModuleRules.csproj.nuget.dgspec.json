@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neofe\\Documents\\GitHub\\UnrealEngine\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj": {}
+    "C:\\Users\\altun\\Documents\\Unreal Projects\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj": {}
   },
   "projects": {
     "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
@@ -10,16 +10,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
         "projectName": "UE5ProgramRules",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -28,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +53,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -77,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -87,16 +85,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
         "projectName": "UE5Rules",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,7 +101,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -130,7 +125,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -151,7 +147,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -161,16 +157,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
         "projectName": "EpicGames.Build",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -179,7 +173,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -207,7 +200,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -242,7 +236,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -252,16 +246,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
         "projectName": "EpicGames.Core",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -270,7 +262,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -288,7 +279,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -343,7 +335,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -353,16 +345,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
         "projectName": "EpicGames.Horde",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Horde\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -371,7 +361,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -405,7 +394,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -484,7 +474,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -494,16 +484,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
         "projectName": "EpicGames.IoHash",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.IoHash\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -512,7 +500,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -534,7 +521,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -565,7 +553,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -575,16 +563,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj",
         "projectName": "EpicGames.MsBuild",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\EpicGames.MsBuild.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.MsBuild\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -593,7 +579,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -615,7 +600,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -651,7 +637,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -661,16 +647,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
         "projectName": "EpicGames.OIDC",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.OIDC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -679,7 +663,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -697,7 +680,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -740,7 +724,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -750,16 +734,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
         "projectName": "EpicGames.Oodle",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Oodle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -768,7 +750,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -786,7 +767,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -807,7 +789,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -817,16 +799,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
         "projectName": "EpicGames.Serialization",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.Serialization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -835,7 +815,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -860,7 +839,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -887,7 +867,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -897,16 +877,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
         "projectName": "EpicGames.UBA",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.UBA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -915,7 +893,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -933,7 +910,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -964,7 +942,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -974,16 +952,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
         "projectName": "EpicGames.UHT",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\Shared\\EpicGames.UHT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -992,7 +968,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1017,7 +992,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1044,7 +1020,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -1054,16 +1030,14 @@
         "projectUniqueName": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
         "projectName": "UnrealBuildTool",
         "projectPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source\\Programs\\UnrealBuildTool\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1072,7 +1046,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1115,7 +1088,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1186,26 +1160,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\neofe\\Documents\\GitHub\\UnrealEngine\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj": {
+    "C:\\Users\\altun\\Documents\\Unreal Projects\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neofe\\Documents\\GitHub\\UnrealEngine\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj",
+        "projectUniqueName": "C:\\Users\\altun\\Documents\\Unreal Projects\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj",
         "projectName": "TheUndoingModuleRules",
-        "projectPath": "C:\\Users\\neofe\\Documents\\GitHub\\UnrealEngine\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj",
-        "packagesPath": "C:\\Users\\neofe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neofe\\Documents\\GitHub\\UnrealEngine\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\obj\\",
+        "projectPath": "C:\\Users\\altun\\Documents\\Unreal Projects\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\TheUndoingModuleRules.csproj",
+        "packagesPath": "C:\\Users\\altun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\altun\\Documents\\Unreal Projects\\TheUndoing\\TheUndoing\\Intermediate\\Build\\BuildRulesProjects\\TheUndoingModuleRules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\neofe\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1214,7 +1186,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1245,7 +1216,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -1266,7 +1238,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

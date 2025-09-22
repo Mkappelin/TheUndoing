@@ -276,7 +276,6 @@ void AMagicianPlayerController::Spell()
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Result.Name, true, FVector2D(2, 2));
 
-		ExitPaintMode();
 	}
 	else 
 	{
