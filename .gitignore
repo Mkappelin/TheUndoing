@@ -689,3 +689,57 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,unrealengine,clion,c++,visualstudio,xcode,windows
+
+# ==== Team overrides for TheUndoing (Windows + macOS) ====
+
+# OS clutter
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE user files
+.vscode/
+.idea/
+TheUndoing/.vs/
+
+# Unreal artifacts (project-scoped)
+TheUndoing/Binaries/**
+TheUndoing/DerivedDataCache/**
+TheUndoing/Intermediate/**
+TheUndoing/Saved/**
+
+# Build: ignore everything, but keep mobile packaging resources & icons
+TheUndoing/Build/*
+!TheUndoing/Build/*/
+TheUndoing/Build/*/**
+!TheUndoing/Build/**/*.ico
+
+# iOS resources to keep (icons/splashes)
+!TheUndoing/Build/IOS/Resources/
+TheUndoing/Build/IOS/Resources/*
+!TheUndoing/Build/IOS/Resources/Graphics/
+TheUndoing/Build/IOS/Resources/Graphics/*
+!TheUndoing/Build/IOS/Resources/Graphics/*.png
+
+# Android resources to keep (launcher icons)
+!TheUndoing/Build/Android/res/
+TheUndoing/Build/Android/res/*
+!TheUndoing/Build/Android/res/*/
+TheUndoing/Build/Android/res/*/*
+!TheUndoing/Build/Android/res/*/*.png
+
+# Plugins: keep sources/content; ignore binaries/intermediates
+TheUndoing/Plugins/**/Binaries/**
+TheUndoing/Plugins/**/Intermediate/**
+TheUndoing/Plugins/**/DerivedDataCache/**
+
+# Always keep project + plugin sources/config/content
+!TheUndoing/Config/**
+!TheUndoing/Content/**
+!TheUndoing/Source/**
+!TheUndoing/*.uproject
+!TheUndoing/*.sln
+!TheUndoing/Plugins/**/*.uplugin
+!TheUndoing/Plugins/**/Source/**
+!TheUndoing/Plugins/**/Config/**
+!TheUndoing/Plugins/**/Content/**
