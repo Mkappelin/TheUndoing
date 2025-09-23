@@ -52,7 +52,6 @@ void AMagicianPlayerController::BeginPlay()
 	TryInitUI();
 
 	IsTraining = false;
-
 	CurrentAction = Action::Idle;
 }
 
@@ -171,18 +170,20 @@ void AMagicianPlayerController::Tick(float DeltaTime)
 
 void AMagicianPlayerController::PressedToPaint()
 {
+	if (bIsPaintingMode) {
+		if (CurrentAction != Action::Train)
+		{
+			// Ensure widget exists
+			if (!PaintWidget) { TryInitUI(); if (!PaintWidget) return; }
 
-	if (CurrentAction != Action::Train)
-	{
-		// Ensure widget exists
-		if (!PaintWidget) { TryInitUI(); if (!PaintWidget) return; }
+			// Ensure pawn exists (avoid “pending kill” access, whatever that means)
+			if (!IsValid(GetPawn())) return;
 
-		// Ensure pawn exists (avoid “pending kill” access, whatever that means)
-		if (!IsValid(GetPawn())) return;
-
-		CurrentAction = Action::Paint;
+			CurrentAction = Action::Paint;
+		}
 	}
 }
+
 void AMagicianPlayerController::ReleasedToPaint()
 {
 	if (CurrentAction == Action::Paint)
