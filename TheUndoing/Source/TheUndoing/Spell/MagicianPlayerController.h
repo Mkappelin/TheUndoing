@@ -39,7 +39,9 @@ class THEUNDOING_API AMagicianPlayerController : public APlayerController
 public:
 	UFUNCTION(Exec)
 	void TrainMode(const bool Is);
-
+	// --- State ---
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
+	bool bIsPaintingMode;
 	AMagicianPlayerController();
 
 	UPROPERTY(BlueprintAssignable, Category = "Spells")
@@ -51,6 +53,7 @@ public:
 
 	// --- Public API for UI ---
 	UFUNCTION(BlueprintCallable) void TogglePaintMode();
+
 
 	UFUNCTION(BlueprintCallable) void EnterPaintMode(AActor* OptionalCamera = nullptr, float BlendTime = 0.5f);
 	UFUNCTION(BlueprintCallable) void ExitPaintMode(float BlendTime = 0.5f);
@@ -74,8 +77,7 @@ protected:
 
 private:
 
-	// --- State ---
-	UPROPERTY() bool bIsPaintingMode;
+
 	UPROPERTY() TWeakObjectPtr<AActor> SavedViewTarget;
 
 	Action CurrentAction = Action::Idle;
