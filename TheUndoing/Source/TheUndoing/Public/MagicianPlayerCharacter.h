@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "PlayerCharacter.generated.h"
+#include "MagicianPlayerCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -18,13 +18,13 @@ struct FInputActionValue;
 
 
 UCLASS(Blueprintable, BlueprintType)
-class THEUNDOING_API APlayerCharacter : public ACharacter
+class THEUNDOING_API AMagicianPlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 	
 public:
 	// Sets default values for this character's properties
-	APlayerCharacter();
+	AMagicianPlayerCharacter();
 
 	// Setter and getter for managing input enabling/disabling
 	UFUNCTION(BlueprintCallable, Category = "Input")
@@ -41,9 +41,6 @@ protected:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
 	/*
@@ -74,23 +71,4 @@ private:
 
 	void SprintStart(const FInputActionValue& Value);
 	void SprintStop(const FInputActionValue& Value);
-
-	/*
-	* Input Actions
-	*/
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	TObjectPtr<class UInputMappingContext> DefaultMappingContext;
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* MovementAction{};
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* SprintAction{};
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* LookAction{};
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* JumpAction{};
-
 };

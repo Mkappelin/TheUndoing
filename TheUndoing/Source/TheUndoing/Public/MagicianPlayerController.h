@@ -4,13 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "InputActionValue.h"
 #include "MagicianPlayerController.generated.h"
 
-// --- Forward declarations ---
-class UUserWidget;
-class UPaintWidget;
-class UDataTable;
-struct FUnistrokeRecognizer;
 
 USTRUCT(BlueprintType)
 struct FSpellRecognitionResult
@@ -27,9 +23,18 @@ struct FSpellRecognitionResult
 	float Score = 0.f;
 };
 
-enum Action { Idle, Paint, Recognize, Train };
-
+// Delegate for broadcasting spell recognition results
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSpellRecognized, const FSpellRecognitionResult&, Result);
+
+// --- Forward declarations ---
+class UUserWidget;
+class UPaintWidget;
+class UDataTable;
+class UInputMappingContext;
+class UInputAction;
+struct FUnistrokeRecognizer;
+
+enum Action { Idle, Paint, Recognize, Train };
 
 UCLASS()
 class THEUNDOING_API AMagicianPlayerController : public APlayerController
@@ -45,9 +50,39 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Spells")
 	FOnSpellRecognized OnSpellRecognized;
 
-	// --- Engine Overrides ---
+	// --- Public Engine Overrides ---
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	virtual void SetupInputComponent() override;
+	virtual void OnPossess(APawn* InPawn) override;
+	virtual void OnUnPossess() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override; // Cleanup for heap allocation
+
+	// --- State ---
+	UPROPERTY(EditAnywhere, Category = "State")
+	bool bIsPaintingMode;
+
+	// --- Input Actions + Mapping Context ---
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputMappingContext* DefaultMappingContext = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* MovementAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* LookAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* JumpAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* SprintAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* PaintAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	UInputAction* TogglePaintModeAction;
 
 	// --- Public API for UI ---
 	UFUNCTION(BlueprintCallable) void TogglePaintMode();
@@ -62,20 +97,15 @@ public:
 
 	UFUNCTION(BlueprintCallable) void AddTemplateToDataTable(const FString Name);
 
-protected:
-
-	virtual void SetupInputComponent() override;
-
-	// Cleanup for heap allocation
-	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-	
-	// --- Lazy init for UI ---
+private:
+	// --- Initialisation ---
 	UFUNCTION() void TryInitUI();
 
-private:
+	// --- Input Mapping Context ---
+	void AddDefaultIMC();
+	void RemoveDefaultIMC();
 
 	// --- State ---
-	UPROPERTY() bool bIsPaintingMode;
 	UPROPERTY() TWeakObjectPtr<AActor> SavedViewTarget;
 
 	Action CurrentAction = Action::Idle;
@@ -95,9 +125,18 @@ private:
 	UPROPERTY() UDataTable* UnistrokeTable; 
 	FUnistrokeRecognizer* Recognizer;		// heap-owned; freed in EndPlay
 
-	// --- Private helpers ---
+	// --- Spell Helpers ---
 	void PressedToPaint();
 	void ReleasedToPaint();
 	void LoadTemplates();
 	void Spell();
+
+	// --- Forwards to Player Pawn --- 
+	void OnMove(const FInputActionValue& Value);
+	void OnLook(const FInputActionValue& Value);
+	void OnJumpStarted(const FInputActionValue& Value);
+	void OnJumpCompleted(const FInputActionValue& Value);
+	void OnSprintStarted(const FInputActionValue& Value);
+	void OnSprintCompleted(const FInputActionValue& Value);
+
 };
