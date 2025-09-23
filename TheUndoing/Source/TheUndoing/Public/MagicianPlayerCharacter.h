@@ -33,6 +33,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	bool IsInputEnabled() const { return bInputEnabled; }
 
+	/*
+	* Callback methods
+	*/
+	UFUNCTION() void Move(const FInputActionValue& Value);
+	UFUNCTION() void Look(const FInputActionValue& Value);
+	UFUNCTION() void SprintStart(const FInputActionValue& Value);
+	UFUNCTION() void SprintStop(const FInputActionValue& Value);
+
 protected:
 	virtual void FaceRotation(FRotator NewControlRotation, float DeltaTime = 0.f) override;
 
@@ -62,13 +70,4 @@ private:
 	float WalkSpeed{ 200.f };
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float SprintSpeed{ 600.f };
-
-	/*
-	* Callback methods
-	*/
-	void Move(const FInputActionValue& Value);
-	void Look(const FInputActionValue& Value);
-
-	void SprintStart(const FInputActionValue& Value);
-	void SprintStop(const FInputActionValue& Value);
 };

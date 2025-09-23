@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+// TODO: Remake the controller inputs to character inputs
 
 #include "MagicianPlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"

@@ -12,7 +12,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 
 // --- Unistroke / Custom Classes ---
-#include "SpellCasting/UnistrokeRecognizer.cpp"
+#include "SpellCasting/UnistrokeRecognizer.h"
 #include "SpellCasting/UnistrokeDataTable.h"
 #include "SpellCasting/PaintWidget.h"
 
@@ -21,6 +21,7 @@
 #include "Engine/UserInterfaceSettings.h"
 
 // --- Engine Utilities ---
+#include "UObject/ConstructorHelpers.h"
 #include "Engine/LocalPlayer.h"
 #include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
@@ -100,11 +101,6 @@ void AMagicianPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	if (!InputComponent)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("MagicianPlayerController: No InputComponent found yet!"));
-		return;
-	}
 
 	if (UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(InputComponent))
 	{
@@ -413,44 +409,52 @@ void AMagicianPlayerController::HidePaintWidget()
 
 void AMagicianPlayerController::OnMove(const FInputActionValue& Value)
 {
-	//if (APawn* P = GetPawn())
-	//{
-	//	// Option A: call your Character’s existing method
-	//	if (auto* C = Cast<APlayerCharacter>(P))
-	//		C->Move(Value);
-	//	// Option B: do minimal intent here and call AddMovementInput directly.
-	//}
+	if (bIsPaintingMode) return;
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())  // your flag on the character
+			C->Move(Value);
+	}
 }
 
 void AMagicianPlayerController::OnLook(const FInputActionValue& Value)
 {
-	/*if (APawn* P = GetPawn())
+	if (bIsPaintingMode) return;
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
 	{
-		if (auto* C = Cast<APlayerCharacter>(P))
+		if (C->IsInputEnabled())
 			C->Look(Value);
-	}*/
+	}
 }
 
-void AMagicianPlayerController::OnJumpStarted(const FInputActionValue&)
-{
-	/*if (auto* C = Cast<ACharacter>(GetPawn()))
-		C->Jump();*/
-}
-void AMagicianPlayerController::OnJumpCompleted(const FInputActionValue&)
-{
-	/*if (auto* C = Cast<ACharacter>(GetPawn()))
-		C->StopJumping();*/
-}
+//void AMagicianPlayerController::OnJumpStarted(const FInputActionValue&)
+//{
+//	if (bIsPaintingMode) return;
+//	if (auto* AC = Cast<ACharacter>(GetPawn()))
+//		AC->Jump();
+//}
+//void AMagicianPlayerController::OnJumpCompleted(const FInputActionValue&)
+//{
+//	if (auto* AC = Cast<ACharacter>(GetPawn()))
+//		AC->StopJumping();
+//}
 
 void AMagicianPlayerController::OnSprintStarted(const FInputActionValue& V)
 {
-	/*if (auto* C = Cast<APlayerCharacter>(GetPawn()))
-		C->SprintStart(V);*/
+	if (bIsPaintingMode) return;
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())
+			C->SprintStart(V);
+	}
 }
 void AMagicianPlayerController::OnSprintCompleted(const FInputActionValue& V)
 {
-	/*if (auto* C = Cast<APlayerCharacter>(GetPawn()))
-		C->SprintStop(V);*/
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())
+			C->SprintStop(V);
+	}
 }
 
 void AMagicianPlayerController::AddDefaultIMC()
@@ -461,7 +465,7 @@ void AMagicianPlayerController::AddDefaultIMC()
 		{
 			if (DefaultMappingContext)
 			{
-				Subsys->AddMappingContext(DefaultMappingContext, /*Priority*/0);
+				Subsys->AddMappingContext(DefaultMappingContext, 0);
 			}
 		}
 	}
