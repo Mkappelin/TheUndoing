@@ -10,7 +10,11 @@
 				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/SpellDrawing/Player/Input/IMC_Test.uasset",
 				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/BP_Player.uasset",
 				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/BP_StatsComponent.uasset",
-				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Scenes/SpellTest1.umap"
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Scenes/SpellTest1.umap",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/UI/Widgets/WBP_HUD.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Scenes/MarcoTest.umap",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/BP_MagicianGameModeBase.uasset",
+				"C:/Users/marco/OneDrive/Dokument/GitHub/TheUndoing/TheUndoing/Content/Blueprints/GM_MarcoTest.uasset"
 			]
 		}
 	]
