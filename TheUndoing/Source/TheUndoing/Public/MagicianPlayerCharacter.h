@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "PlayerCharacter.generated.h"
+#include "MagicianPlayerCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -18,13 +18,13 @@ struct FInputActionValue;
 
 
 UCLASS(Blueprintable, BlueprintType)
-class THEUNDOING_API APlayerCharacter : public ACharacter
+class THEUNDOING_API AMagicianPlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 	
 public:
 	// Sets default values for this character's properties
-	APlayerCharacter();
+	AMagicianPlayerCharacter();
 
 	// Setter and getter for managing input enabling/disabling
 	UFUNCTION(BlueprintCallable, Category = "Input")
@@ -32,6 +32,14 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	bool IsInputEnabled() const { return bInputEnabled; }
+
+	/*
+	* Callback methods
+	*/
+	UFUNCTION() void Move(const FInputActionValue& Value);
+	UFUNCTION() void Look(const FInputActionValue& Value);
+	UFUNCTION() void SprintStart(const FInputActionValue& Value);
+	UFUNCTION() void SprintStop(const FInputActionValue& Value);
 
 protected:
 	virtual void FaceRotation(FRotator NewControlRotation, float DeltaTime = 0.f) override;
@@ -41,9 +49,6 @@ protected:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
 	/*
@@ -65,32 +70,4 @@ private:
 	float WalkSpeed{ 200.f };
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float SprintSpeed{ 600.f };
-
-	/*
-	* Callback methods
-	*/
-	void Move(const FInputActionValue& Value);
-	void Look(const FInputActionValue& Value);
-
-	void SprintStart(const FInputActionValue& Value);
-	void SprintStop(const FInputActionValue& Value);
-
-	/*
-	* Input Actions
-	*/
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	TObjectPtr<class UInputMappingContext> DefaultMappingContext;
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* MovementAction{};
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* SprintAction{};
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* LookAction{};
-
-	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* JumpAction{};
-
 };

@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+// TODO: Remake the controller inputs to character inputs
 
-#include "PlayerCharacter.h"
+#include "MagicianPlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 #include "GameFramework/SpringArmComponent.h"
@@ -21,7 +22,7 @@
 #include "Blueprint/UserWidget.h"
 
 // Sets default values
-APlayerCharacter::APlayerCharacter()
+AMagicianPlayerCharacter::AMagicianPlayerCharacter()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -43,7 +44,7 @@ APlayerCharacter::APlayerCharacter()
 }
 
 // Called when the game starts or when spawned
-void APlayerCharacter::BeginPlay()
+void AMagicianPlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -51,39 +52,18 @@ void APlayerCharacter::BeginPlay()
 	{
 		GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 
-		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
-		{
-			Subsystem->AddMappingContext(DefaultMappingContext, 0);
-		}
 	}
 
 }
 
 // Called every frame
-void APlayerCharacter::Tick(float DeltaTime)
+void AMagicianPlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
-void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
-	{
-		EnhancedInputComponent->BindAction(MovementAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Move);
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &APlayerCharacter::StopJumping);
-
-		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Started, this, &APlayerCharacter::SprintStart);
-		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &APlayerCharacter::SprintStop);
-	}
-}
-
-void APlayerCharacter::SetInputEnabled(bool bEnable)
+void AMagicianPlayerCharacter::SetInputEnabled(bool bEnable)
 {
 	if (bInputEnabled == bEnable) return;
 
@@ -91,36 +71,21 @@ void APlayerCharacter::SetInputEnabled(bool bEnable)
 	{
 		if (ULocalPlayer* LP = PC->GetLocalPlayer())
 		{
-			if (UEnhancedInputLocalPlayerSubsystem* Subsys =
-				ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LP))
-			{
-				if (DefaultMappingContext)
-				{
-					if (bEnable)
-					{
-						Subsys->AddMappingContext(DefaultMappingContext, /*Priority*/0);
-					}
-					else
-					{
-						Subsys->RemoveMappingContext(DefaultMappingContext);
-					}
-					bInputEnabled = bEnable;
-				}
-			}
+			bInputEnabled = bEnable;
 		}
 	}
 }
 
-void APlayerCharacter::SprintStart(const FInputActionValue& Value)
+void AMagicianPlayerCharacter::SprintStart(const FInputActionValue& Value)
 {
 	GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
 }
-void APlayerCharacter::SprintStop(const FInputActionValue& Value)
+void AMagicianPlayerCharacter::SprintStop(const FInputActionValue& Value)
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
 
-void APlayerCharacter::Move(const FInputActionValue& Value)
+void AMagicianPlayerCharacter::Move(const FInputActionValue& Value)
 {
 	if (Controller == nullptr) return;
 
@@ -136,7 +101,7 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 
 }
 
-void APlayerCharacter::Look(const FInputActionValue& Value)
+void AMagicianPlayerCharacter::Look(const FInputActionValue& Value)
 {
 	const FVector2D LookAxisVector = Value.Get<FVector2D>();
 
@@ -147,7 +112,7 @@ void APlayerCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
-void APlayerCharacter::FaceRotation(FRotator NewControlRotation, float DeltaTime)
+void AMagicianPlayerCharacter::FaceRotation(FRotator NewControlRotation, float DeltaTime)
 {
 	if (bInputEnabled) 
 	{

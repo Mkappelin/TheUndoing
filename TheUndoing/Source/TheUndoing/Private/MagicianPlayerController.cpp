@@ -1,26 +1,35 @@
 #include "MagicianPlayerController.h"
 
+// --- Enhanced Input (needed for mapping context, input binding) ---
+#include "EnhancedInputComponent.h"
+#include "EnhancedInputSubsystems.h"
+#include "InputMappingContext.h"
+#include "InputAction.h"
+
+// --- Game / Pawn (needed because we forward input to pawn/character) ---
+#include "MagicianPlayerCharacter.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "GameFramework/PlayerController.h"
-#include "Runtime/Engine/Classes/Engine/UserInterfaceSettings.h"
-#include "Runtime/Engine/Classes/Engine/RendererSettings.h"
-#include "UnistrokeRecognizer.h"
-#include "PaintWidget.h"
-#include "UnistrokeDataTable.h"
-#include "MagicianPawn.h"
-#include "EnhancedInputComponent.h"
+
+// --- Unistroke / Custom Classes ---
+#include "SpellCasting/UnistrokeRecognizer.h"
+#include "SpellCasting/UnistrokeDataTable.h"
+#include "SpellCasting/PaintWidget.h"
+
+// --- UI / Widgets ---
 #include "Blueprint/UserWidget.h"
 #include "Engine/UserInterfaceSettings.h"
-#include "Kismet/GameplayStatics.h"
+
+// --- Engine Utilities ---
+#include "UObject/ConstructorHelpers.h"
 #include "Engine/LocalPlayer.h"
+#include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
 #include "Engine/Engine.h"
 
-
 AMagicianPlayerController::AMagicianPlayerController()
 {
-	Recognizer = new FUnistrokeRecognizer(); // -- Maybe needs to be freed in EndPlay()
+	Recognizer = new FUnistrokeRecognizer();
 
 	static ConstructorHelpers::FObjectFinder<UDataTable> UnistrokeTemplatesTable(TEXT("DataTable'/Game/DataTables/Templates.Templates'"));
 	if (UnistrokeTemplatesTable.Succeeded())
@@ -37,18 +46,12 @@ void AMagicianPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
+	AddDefaultIMC();
+
 	// Defer widget creation until we have a LocalPlayer (fixes: "no attached player")
 	TryInitUI();
 
-	/*FInputModeGameAndUI InputMode;
-	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-	InputMode.SetHideCursorDuringCapture(false);
-	bShowMouseCursor = true;
-
-	SetInputMode(InputMode);*/
-
 	IsTraining = false;
-
 	CurrentAction = Action::Idle;
 }
 
@@ -97,15 +100,41 @@ void AMagicianPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	if (!InputComponent)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("MagicianPlayerController: No InputComponent found yet!"));
-		return;
-	}
 
-	InputComponent->BindAction("PaintButton", IE_Pressed, this, &AMagicianPlayerController::PressedToPaint);
-	InputComponent->BindAction("PaintButton", IE_Released, this, &AMagicianPlayerController::ReleasedToPaint);
-	InputComponent->BindKey(EKeys::T, IE_Pressed, this, &AMagicianPlayerController::TogglePaintMode);
+	if (UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(InputComponent))
+	{
+		try 
+		{
+			EIC->BindAction(MovementAction, ETriggerEvent::Triggered, this, &AMagicianPlayerController::OnMove);
+			EIC->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMagicianPlayerController::OnLook);
+
+			EIC->BindAction(JumpAction, ETriggerEvent::Started, this, &AMagicianPlayerController::OnJumpStarted);
+			EIC->BindAction(JumpAction, ETriggerEvent::Completed, this, &AMagicianPlayerController::OnJumpCompleted);
+
+			EIC->BindAction(SprintAction, ETriggerEvent::Started, this, &AMagicianPlayerController::OnSprintStarted);
+			EIC->BindAction(SprintAction, ETriggerEvent::Completed, this, &AMagicianPlayerController::OnSprintCompleted);
+
+			EIC->BindAction(PaintAction, ETriggerEvent::Started, this, &AMagicianPlayerController::PressedToPaint);
+			EIC->BindAction(PaintAction, ETriggerEvent::Completed, this, &AMagicianPlayerController::ReleasedToPaint);
+			EIC->BindAction(TogglePaintModeAction, ETriggerEvent::Started, this, &AMagicianPlayerController::TogglePaintMode);
+		}
+		catch (...) 
+		{ 
+			UE_LOG(LogTemp, Warning, TEXT("MagicianPlayerController: Exception during binding input actions!")); 
+		}
+	}
+}
+void AMagicianPlayerController::OnPossess(APawn* InPawn)
+{
+	Super::OnPossess(InPawn);
+
+	AddDefaultIMC();
+}
+void AMagicianPlayerController::OnUnPossess()
+{
+	Super::OnUnPossess();
+
+	// TIP: Remove or switch to a spectate IMC here.
 }
 
 void AMagicianPlayerController::Tick(float DeltaTime)
@@ -141,24 +170,20 @@ void AMagicianPlayerController::Tick(float DeltaTime)
 
 void AMagicianPlayerController::PressedToPaint()
 {
-	if (!bIsPaintingMode)
-	{
-		// Notifies that painting mode is off
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, TEXT("Press T to enable painting mode"));
-		return;
-	}
+	if (bIsPaintingMode) {
+		if (CurrentAction != Action::Train)
+		{
+			// Ensure widget exists
+			if (!PaintWidget) { TryInitUI(); if (!PaintWidget) return; }
 
-	if (CurrentAction != Action::Train)
-	{
-		// Ensure widget exists
-		if (!PaintWidget) { TryInitUI(); if (!PaintWidget) return; }
+			// Ensure pawn exists (avoid “pending kill” access, whatever that means)
+			if (!IsValid(GetPawn())) return;
 
-		// Ensure pawn exists (avoid “pending kill” access, whatever that means)
-		if (!IsValid(GetPawn())) return;
-
-		CurrentAction = Action::Paint;
+			CurrentAction = Action::Paint;
+		}
 	}
 }
+
 void AMagicianPlayerController::ReleasedToPaint()
 {
 	if (CurrentAction == Action::Paint)
@@ -221,12 +246,6 @@ void AMagicianPlayerController::EnterPaintMode(AActor* NewCamera, float BlendTim
 	SetIgnoreMoveInput(true);
 	SetIgnoreLookInput(true);
 
-	// If Character has SetInputEnabled(bool), you can also remove gameplay context locally:
-	//if (APawn* P = GetPawn())
-	//{
-	//	if (auto* PC = Cast<APlayerCharacter>(P))
-	//		PC->SetInputEnabled(false);  // uses your existing helper in Character
-	//}
 }
 
 void AMagicianPlayerController::ExitPaintMode(float BlendTime)
@@ -252,13 +271,6 @@ void AMagicianPlayerController::ExitPaintMode(float BlendTime)
 	// Re-enable movement- and look input
 	SetIgnoreMoveInput(false);
 	SetIgnoreLookInput(false);
-
-	// Re-enable gameplay input mapping on local
-	/*if (APawn* P = GetPawn())
-	{
-		if (auto* PC = Cast<APlayerCharacter>(P))
-			PC->SetInputEnabled(true);
-	}*/
 
 	// If you were painting when toggled off
 	if (CurrentAction == Action::Paint)
@@ -297,25 +309,8 @@ void AMagicianPlayerController::Spell()
 
 void AMagicianPlayerController::LoadTemplates()
 {
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(
-			-1,                     // Key (-1 means "new message")
-			5.f,                    // Display time in seconds
-			FColor::Yellow,          // Text color
-			TEXT("Loading templates...") // Message
-		);
-	}
-
 	if (UnistrokeTable != nullptr)
 	{
-		if (GEngine) {
-				GEngine->AddOnScreenDebugMessage(
-				-1,                     // Key (-1 means "new message")
-				5.f,                    // Display time in seconds
-				FColor::Green,          // Text color
-				TEXT("Templates found!!") // Message
-			);
-		}
 
 		const FString ContextString = "Templates";
 		TArray<FUnistrokeDataTable*> Rows;
@@ -325,6 +320,16 @@ void AMagicianPlayerController::LoadTemplates()
 		for (int i = 0; i < Rows.Num(); i++)
 		{
 			Recognizer->AddTemplate((*Rows[i]).Name, (*Rows[i]).Points);
+		}
+	}
+	else {
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(
+				-1,                     // Key (-1 means "new message")
+				5.f,                    // Display time in seconds
+				FColor::Red,            // Text color
+				TEXT("No Templates found!!") // Message
+			);
 		}
 	}
 }
@@ -398,6 +403,86 @@ void AMagicianPlayerController::HidePaintWidget()
 	if (PaintWidget != nullptr)
 	{
 		PaintWidget->SetVisibility(ESlateVisibility::Hidden);
+	}
+}
+
+// --- Input callbacks ---
+
+void AMagicianPlayerController::OnMove(const FInputActionValue& Value)
+{
+	if (bIsPaintingMode) return;
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())  // your flag on the character
+			C->Move(Value);
+	}
+}
+
+void AMagicianPlayerController::OnLook(const FInputActionValue& Value)
+{
+	if (bIsPaintingMode) return;
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())
+			C->Look(Value);
+	}
+}
+
+//void AMagicianPlayerController::OnJumpStarted(const FInputActionValue&)
+//{
+//	if (bIsPaintingMode) return;
+//	if (auto* AC = Cast<ACharacter>(GetPawn()))
+//		AC->Jump();
+//}
+//void AMagicianPlayerController::OnJumpCompleted(const FInputActionValue&)
+//{
+//	if (auto* AC = Cast<ACharacter>(GetPawn()))
+//		AC->StopJumping();
+//}
+
+void AMagicianPlayerController::OnSprintStarted(const FInputActionValue& V)
+{
+	if (bIsPaintingMode) return;
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())
+			C->SprintStart(V);
+	}
+}
+void AMagicianPlayerController::OnSprintCompleted(const FInputActionValue& V)
+{
+	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
+	{
+		if (C->IsInputEnabled())
+			C->SprintStop(V);
+	}
+}
+
+void AMagicianPlayerController::AddDefaultIMC()
+{
+	if (ULocalPlayer* LP = GetLocalPlayer())
+	{
+		if (auto* Subsys = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LP))
+		{
+			if (DefaultMappingContext)
+			{
+				Subsys->AddMappingContext(DefaultMappingContext, 0);
+			}
+		}
+	}
+}
+
+void AMagicianPlayerController::RemoveDefaultIMC()
+{
+	if (ULocalPlayer* LP = GetLocalPlayer())
+	{
+		if (auto* Subsys = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LP))
+		{
+			if (DefaultMappingContext)
+			{
+				Subsys->RemoveMappingContext(DefaultMappingContext);
+			}
+		}
 	}
 }
 
