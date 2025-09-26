@@ -1,15 +1,15 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\source\\theundoing\\spell\\unistrokepoint.cpp",
+        "Source": "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\source\\theundoing\\spell\\unistrokepoint.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\theundoingeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_3.h.pch",
+        "PCH": "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\theundoingeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_3.h.pch",
         "Includes": [
-            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\theundoing\\definitions.theundoing.h",
-            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\source\\theundoing\\spell\\unistrokepoint.h",
-            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\source\\theundoing\\spell\\unistrokerectangle.h",
-            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\unrealeditor\\inc\\theundoing\\uht\\unistrokerectangle.generated.h",
-            "c:\\users\\neofe\\documents\\github\\unrealengine\\theundoing\\theundoing\\intermediate\\build\\win64\\unrealeditor\\inc\\theundoing\\uht\\unistrokepoint.generated.h"
+            "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\theundoing\\definitions.theundoing.h",
+            "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\source\\theundoing\\spell\\unistrokepoint.h",
+            "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\source\\theundoing\\spell\\unistrokerectangle.h",
+            "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\intermediate\\build\\win64\\unrealeditor\\inc\\theundoing\\uht\\unistrokerectangle.generated.h",
+            "c:\\users\\altun\\documents\\unreal projects\\theundoing\\theundoing\\intermediate\\build\\win64\\unrealeditor\\inc\\theundoing\\uht\\unistrokepoint.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
