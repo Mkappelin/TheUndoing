@@ -53,39 +53,16 @@ public:
 	// --- Public Engine Overrides ---
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
-	virtual void SetupInputComponent() override;
-	virtual void OnPossess(APawn* InPawn) override;
-	virtual void OnUnPossess() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override; // Cleanup for heap allocation
 
 	// --- State ---
 	UPROPERTY(EditAnywhere, Category = "State")
 	bool bIsPaintingMode;
 
-	// --- Input Actions + Mapping Context ---
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputMappingContext* DefaultMappingContext = nullptr;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* MovementAction;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* LookAction;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* JumpAction;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* SprintAction;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* PaintAction;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* TogglePaintModeAction;
-
 	// --- Public API for UI ---
 	UFUNCTION(BlueprintCallable) void TogglePaintMode();
+	UFUNCTION(BlueprintCallable) void PressedToPaint();
+	UFUNCTION(BlueprintCallable) void ReleasedToPaint();
 
 	UFUNCTION(BlueprintCallable) void EnterPaintMode(AActor* OptionalCamera = nullptr, float BlendTime = 0.5f);
 	UFUNCTION(BlueprintCallable) void ExitPaintMode(float BlendTime = 0.5f);
@@ -101,9 +78,6 @@ private:
 	// --- Initialisation ---
 	UFUNCTION() void TryInitUI();
 
-	// --- Input Mapping Context ---
-	void AddDefaultIMC();
-	void RemoveDefaultIMC();
 
 	// --- State ---
 	UPROPERTY() TWeakObjectPtr<AActor> SavedViewTarget;
@@ -126,17 +100,7 @@ private:
 	FUnistrokeRecognizer* Recognizer;		// heap-owned; freed in EndPlay
 
 	// --- Spell Helpers ---
-	void PressedToPaint();
-	void ReleasedToPaint();
+	
 	void LoadTemplates();
 	void Spell();
-
-	// --- Forwards to Player Pawn --- 
-	void OnMove(const FInputActionValue& Value);
-	void OnLook(const FInputActionValue& Value);
-	void OnJumpStarted(const FInputActionValue& Value);
-	void OnJumpCompleted(const FInputActionValue& Value);
-	void OnSprintStarted(const FInputActionValue& Value);
-	void OnSprintCompleted(const FInputActionValue& Value);
-
 };

@@ -46,7 +46,7 @@ void AMagicianPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	AddDefaultIMC();
+	//AddDefaultIMC();
 
 	// Defer widget creation until we have a LocalPlayer (fixes: "no attached player")
 	TryInitUI();
@@ -54,6 +54,8 @@ void AMagicianPlayerController::BeginPlay()
 	IsTraining = false;
 
 	CurrentAction = Action::Idle;
+
+	
 }
 
 void AMagicianPlayerController::TryInitUI()
@@ -97,46 +99,6 @@ void AMagicianPlayerController::TryInitUI()
 	}
 }
 
-void AMagicianPlayerController::SetupInputComponent()
-{
-	Super::SetupInputComponent();
-
-
-	if (UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(InputComponent))
-	{
-		try 
-		{
-			EIC->BindAction(MovementAction, ETriggerEvent::Triggered, this, &AMagicianPlayerController::OnMove);
-			EIC->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMagicianPlayerController::OnLook);
-
-			EIC->BindAction(JumpAction, ETriggerEvent::Started, this, &AMagicianPlayerController::OnJumpStarted);
-			EIC->BindAction(JumpAction, ETriggerEvent::Completed, this, &AMagicianPlayerController::OnJumpCompleted);
-
-			EIC->BindAction(SprintAction, ETriggerEvent::Started, this, &AMagicianPlayerController::OnSprintStarted);
-			EIC->BindAction(SprintAction, ETriggerEvent::Completed, this, &AMagicianPlayerController::OnSprintCompleted);
-
-			EIC->BindAction(PaintAction, ETriggerEvent::Started, this, &AMagicianPlayerController::PressedToPaint);
-			EIC->BindAction(PaintAction, ETriggerEvent::Completed, this, &AMagicianPlayerController::ReleasedToPaint);
-			EIC->BindAction(TogglePaintModeAction, ETriggerEvent::Started, this, &AMagicianPlayerController::TogglePaintMode);
-		}
-		catch (...) 
-		{ 
-			UE_LOG(LogTemp, Warning, TEXT("MagicianPlayerController: Exception during binding input actions!")); 
-		}
-	}
-}
-void AMagicianPlayerController::OnPossess(APawn* InPawn)
-{
-	Super::OnPossess(InPawn);
-
-	AddDefaultIMC();
-}
-void AMagicianPlayerController::OnUnPossess()
-{
-	Super::OnUnPossess();
-
-	// TIP: Remove or switch to a spectate IMC here.
-}
 
 void AMagicianPlayerController::Tick(float DeltaTime)
 {
@@ -172,12 +134,12 @@ void AMagicianPlayerController::Tick(float DeltaTime)
 void AMagicianPlayerController::PressedToPaint()
 {
 
-	if (CurrentAction != Action::Train)
+	if (bIsPaintingMode && CurrentAction != Action::Train)
 	{
 		// Ensure widget exists
 		if (!PaintWidget) { TryInitUI(); if (!PaintWidget) return; }
 
-		// Ensure pawn exists (avoid “pending kill” access, whatever that means)
+		// Ensure pawn exists (avoid ï¿½pending killï¿½ access, whatever that means)
 		if (!IsValid(GetPawn())) return;
 
 		CurrentAction = Action::Paint;
@@ -402,86 +364,6 @@ void AMagicianPlayerController::HidePaintWidget()
 	if (PaintWidget != nullptr)
 	{
 		PaintWidget->SetVisibility(ESlateVisibility::Hidden);
-	}
-}
-
-// --- Input callbacks ---
-
-void AMagicianPlayerController::OnMove(const FInputActionValue& Value)
-{
-	if (bIsPaintingMode) return;
-	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
-	{
-		if (C->IsInputEnabled())  // your flag on the character
-			C->Move(Value);
-	}
-}
-
-void AMagicianPlayerController::OnLook(const FInputActionValue& Value)
-{
-	if (bIsPaintingMode) return;
-	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
-	{
-		if (C->IsInputEnabled())
-			C->Look(Value);
-	}
-}
-
-//void AMagicianPlayerController::OnJumpStarted(const FInputActionValue&)
-//{
-//	if (bIsPaintingMode) return;
-//	if (auto* AC = Cast<ACharacter>(GetPawn()))
-//		AC->Jump();
-//}
-//void AMagicianPlayerController::OnJumpCompleted(const FInputActionValue&)
-//{
-//	if (auto* AC = Cast<ACharacter>(GetPawn()))
-//		AC->StopJumping();
-//}
-
-void AMagicianPlayerController::OnSprintStarted(const FInputActionValue& V)
-{
-	if (bIsPaintingMode) return;
-	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
-	{
-		if (C->IsInputEnabled())
-			C->SprintStart(V);
-	}
-}
-void AMagicianPlayerController::OnSprintCompleted(const FInputActionValue& V)
-{
-	if (auto* C = Cast<AMagicianPlayerCharacter>(GetPawn()))
-	{
-		if (C->IsInputEnabled())
-			C->SprintStop(V);
-	}
-}
-
-void AMagicianPlayerController::AddDefaultIMC()
-{
-	if (ULocalPlayer* LP = GetLocalPlayer())
-	{
-		if (auto* Subsys = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LP))
-		{
-			if (DefaultMappingContext)
-			{
-				Subsys->AddMappingContext(DefaultMappingContext, 0);
-			}
-		}
-	}
-}
-
-void AMagicianPlayerController::RemoveDefaultIMC()
-{
-	if (ULocalPlayer* LP = GetLocalPlayer())
-	{
-		if (auto* Subsys = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LP))
-		{
-			if (DefaultMappingContext)
-			{
-				Subsys->RemoveMappingContext(DefaultMappingContext);
-			}
-		}
 	}
 }
 
