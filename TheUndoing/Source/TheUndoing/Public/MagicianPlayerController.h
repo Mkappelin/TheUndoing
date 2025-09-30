@@ -56,7 +56,7 @@ public:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override; // Cleanup for heap allocation
 
 	// --- State ---
-	UPROPERTY(EditAnywhere, Category = "State")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
 	bool bIsPaintingMode;
 
 	// --- Public API for UI ---
