@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "TheUndoing/Spell/UnistrokePoint.h"
+#include "SpellCasting/UnistrokePoint.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -30,7 +30,7 @@ struct Z_Construct_UScriptStruct_FUnistrokePoint_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Spell/UnistrokePoint.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/UnistrokePoint.h" },
 	};
 #endif // WITH_METADATA
 	static void* NewStructOps()
@@ -63,15 +63,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FUnistrokePoint()
 // ********** End ScriptStruct FUnistrokePoint *****************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokePoint_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokePoint_h__Script_TheUndoing_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FUnistrokePoint::StaticStruct, Z_Construct_UScriptStruct_FUnistrokePoint_Statics::NewStructOps, TEXT("UnistrokePoint"), &Z_Registration_Info_UScriptStruct_FUnistrokePoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUnistrokePoint), 3874218263U) },
+		{ FUnistrokePoint::StaticStruct, Z_Construct_UScriptStruct_FUnistrokePoint_Statics::NewStructOps, TEXT("UnistrokePoint"), &Z_Registration_Info_UScriptStruct_FUnistrokePoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUnistrokePoint), 2670849157U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokePoint_h__Script_TheUndoing_199441776(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokePoint_h__Script_TheUndoing_2220068705(TEXT("/Script/TheUndoing"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokePoint_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokePoint_h__Script_TheUndoing_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokePoint_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokePoint_h__Script_TheUndoing_Statics::ScriptStructInfo),
 	nullptr, 0);
 // ********** End Registration *********************************************************************
 

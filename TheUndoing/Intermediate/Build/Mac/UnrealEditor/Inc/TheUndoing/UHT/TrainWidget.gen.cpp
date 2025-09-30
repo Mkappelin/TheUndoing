@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "TheUndoing/Spell/TrainWidget.h"
+#include "SpellCasting/TrainWidget.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -25,7 +25,7 @@ struct Z_Construct_UFunction_UTrainWidget_AddNewTemplate_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Spell/TrainWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/TrainWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -54,7 +54,7 @@ struct Z_Construct_UFunction_UTrainWidget_ClearPoints_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Spell/TrainWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/TrainWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -124,23 +124,23 @@ struct Z_Construct_UClass_UTrainWidget_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
 #endif
-		{ "IncludePath", "Spell/TrainWidget.h" },
-		{ "ModuleRelativePath", "Spell/TrainWidget.h" },
+		{ "IncludePath", "SpellCasting/TrainWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/TrainWidget.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AddButton_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Spell/TrainWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/TrainWidget.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ClearButton_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Spell/TrainWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/TrainWidget.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NameTextBox_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Spell/TrainWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/TrainWidget.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AddButton;
@@ -149,8 +149,8 @@ struct Z_Construct_UClass_UTrainWidget_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UTrainWidget_AddNewTemplate, "AddNewTemplate" }, // 278306832
-		{ &Z_Construct_UFunction_UTrainWidget_ClearPoints, "ClearPoints" }, // 238001297
+		{ &Z_Construct_UFunction_UTrainWidget_AddNewTemplate, "AddNewTemplate" }, // 471173389
+		{ &Z_Construct_UFunction_UTrainWidget_ClearPoints, "ClearPoints" }, // 2280768293
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -201,14 +201,14 @@ UTrainWidget::~UTrainWidget() {}
 // ********** End Class UTrainWidget ***************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_TrainWidget_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_TrainWidget_h__Script_TheUndoing_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UTrainWidget, UTrainWidget::StaticClass, TEXT("UTrainWidget"), &Z_Registration_Info_UClass_UTrainWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTrainWidget), 2176746222U) },
+		{ Z_Construct_UClass_UTrainWidget, UTrainWidget::StaticClass, TEXT("UTrainWidget"), &Z_Registration_Info_UClass_UTrainWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTrainWidget), 3777068197U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_TrainWidget_h__Script_TheUndoing_2176409669(TEXT("/Script/TheUndoing"),
-	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_TrainWidget_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_TrainWidget_h__Script_TheUndoing_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_TrainWidget_h__Script_TheUndoing_4221341023(TEXT("/Script/TheUndoing"),
+	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_TrainWidget_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_TrainWidget_h__Script_TheUndoing_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

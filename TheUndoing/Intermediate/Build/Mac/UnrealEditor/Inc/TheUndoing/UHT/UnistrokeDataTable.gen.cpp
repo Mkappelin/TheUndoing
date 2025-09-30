@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "TheUndoing/Spell/UnistrokeDataTable.h"
+#include "SpellCasting/UnistrokeDataTable.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -33,15 +33,15 @@ struct Z_Construct_UScriptStruct_FUnistrokeDataTable_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Spell/UnistrokeDataTable.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/UnistrokeDataTable.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[] = {
 		{ "Category", "UnistrokeDataTable" },
-		{ "ModuleRelativePath", "Spell/UnistrokeDataTable.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/UnistrokeDataTable.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Points_MetaData[] = {
 		{ "Category", "UnistrokeDataTable" },
-		{ "ModuleRelativePath", "Spell/UnistrokeDataTable.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/UnistrokeDataTable.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_Name;
@@ -87,15 +87,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FUnistrokeDataTable()
 // ********** End ScriptStruct FUnistrokeDataTable *************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokeDataTable_h__Script_TheUndoing_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FUnistrokeDataTable::StaticStruct, Z_Construct_UScriptStruct_FUnistrokeDataTable_Statics::NewStructOps, TEXT("UnistrokeDataTable"), &Z_Registration_Info_UScriptStruct_FUnistrokeDataTable, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUnistrokeDataTable), 115406211U) },
+		{ FUnistrokeDataTable::StaticStruct, Z_Construct_UScriptStruct_FUnistrokeDataTable_Statics::NewStructOps, TEXT("UnistrokeDataTable"), &Z_Registration_Info_UScriptStruct_FUnistrokeDataTable, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUnistrokeDataTable), 2781846613U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h__Script_TheUndoing_3898473460(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokeDataTable_h__Script_TheUndoing_884259577(TEXT("/Script/TheUndoing"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h__Script_TheUndoing_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokeDataTable_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokeDataTable_h__Script_TheUndoing_Statics::ScriptStructInfo),
 	nullptr, 0);
 // ********** End Registration *********************************************************************
 

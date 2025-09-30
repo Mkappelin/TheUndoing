@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "TheUndoing/Spell/PaintWidget.h"
+#include "SpellCasting/PaintWidget.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -55,8 +55,8 @@ struct Z_Construct_UClass_UPaintWidget_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "Spell/PaintWidget.h" },
-		{ "ModuleRelativePath", "Spell/PaintWidget.h" },
+		{ "IncludePath", "SpellCasting/PaintWidget.h" },
+		{ "ModuleRelativePath", "Private/SpellCasting/PaintWidget.h" },
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -99,14 +99,14 @@ UPaintWidget::~UPaintWidget() {}
 // ********** End Class UPaintWidget ***************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h__Script_TheUndoing_Statics
+struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_PaintWidget_h__Script_TheUndoing_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPaintWidget, UPaintWidget::StaticClass, TEXT("UPaintWidget"), &Z_Registration_Info_UClass_UPaintWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPaintWidget), 2314172736U) },
+		{ Z_Construct_UClass_UPaintWidget, UPaintWidget::StaticClass, TEXT("UPaintWidget"), &Z_Registration_Info_UClass_UPaintWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPaintWidget), 36938114U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h__Script_TheUndoing_1960811378(TEXT("/Script/TheUndoing"),
-	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_PaintWidget_h__Script_TheUndoing_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_PaintWidget_h__Script_TheUndoing_3145790544(TEXT("/Script/TheUndoing"),
+	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_PaintWidget_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_PaintWidget_h__Script_TheUndoing_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

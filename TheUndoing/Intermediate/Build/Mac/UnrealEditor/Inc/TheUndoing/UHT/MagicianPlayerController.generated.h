@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "Spell/MagicianPlayerController.h"
+// IWYU pragma: private, include "MagicianPlayerController.h"
 
 #ifdef THEUNDOING_MagicianPlayerController_generated_h
 #error "MagicianPlayerController.generated.h already included, missing '#pragma once' in MagicianPlayerController.h"
@@ -20,7 +20,7 @@ class AActor;
 struct FSpellRecognitionResult;
 
 // ********** Begin ScriptStruct FSpellRecognitionResult *******************************************
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_18_GENERATED_BODY \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_14_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics; \
 	THEUNDOING_API static class UScriptStruct* StaticStruct();
 
@@ -29,14 +29,14 @@ struct FSpellRecognitionResult;
 // ********** End ScriptStruct FSpellRecognitionResult *********************************************
 
 // ********** Begin Delegate FOnSpellRecognized ****************************************************
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_32_DELEGATE \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_27_DELEGATE \
 THEUNDOING_API void FOnSpellRecognized_DelegateWrapper(const FMulticastScriptDelegate& OnSpellRecognized, FSpellRecognitionResult const& Result);
 
 
 // ********** End Delegate FOnSpellRecognized ******************************************************
 
 // ********** Begin Class AMagicianPlayerController ************************************************
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execTryInitUI); \
 	DECLARE_FUNCTION(execAddTemplateToDataTable); \
 	DECLARE_FUNCTION(execHidePaintWidget); \
@@ -45,13 +45,15 @@ THEUNDOING_API void FOnSpellRecognized_DelegateWrapper(const FMulticastScriptDel
 	DECLARE_FUNCTION(execShowTrainWidget); \
 	DECLARE_FUNCTION(execExitPaintMode); \
 	DECLARE_FUNCTION(execEnterPaintMode); \
+	DECLARE_FUNCTION(execReleasedToPaint); \
+	DECLARE_FUNCTION(execPressedToPaint); \
 	DECLARE_FUNCTION(execTogglePaintMode); \
 	DECLARE_FUNCTION(execTrainMode);
 
 
 THEUNDOING_API UClass* Z_Construct_UClass_AMagicianPlayerController_NoRegister();
 
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_INCLASS_NO_PURE_DECLS \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMagicianPlayerController(); \
 	friend struct Z_Construct_UClass_AMagicianPlayerController_Statics; \
@@ -62,7 +64,7 @@ public: \
 	DECLARE_SERIALIZER(AMagicianPlayerController)
 
 
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_ENHANCED_CONSTRUCTORS \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMagicianPlayerController(AMagicianPlayerController&&) = delete; \
 	AMagicianPlayerController(const AMagicianPlayerController&) = delete; \
@@ -72,13 +74,13 @@ public: \
 	NO_API virtual ~AMagicianPlayerController();
 
 
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_34_PROLOG
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_GENERATED_BODY \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_39_PROLOG
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_INCLASS_NO_PURE_DECLS \
-	FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h_37_ENHANCED_CONSTRUCTORS \
+	FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_INCLASS_NO_PURE_DECLS \
+	FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h_42_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -88,6 +90,6 @@ class AMagicianPlayerController;
 // ********** End Class AMagicianPlayerController **************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_MagicianPlayerController_h
+#define CURRENT_FILE_ID FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

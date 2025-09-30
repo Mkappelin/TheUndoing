@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "Spell/UnistrokeDataTable.h"
+// IWYU pragma: private, include "SpellCasting/UnistrokeDataTable.h"
 
 #ifdef THEUNDOING_UnistrokeDataTable_generated_h
 #error "UnistrokeDataTable.generated.h already included, missing '#pragma once' in UnistrokeDataTable.h"
@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin ScriptStruct FUnistrokeDataTable ***********************************************
-#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h_12_GENERATED_BODY \
+#define FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokeDataTable_h_12_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FUnistrokeDataTable_Statics; \
 	static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -27,6 +27,6 @@ struct FUnistrokeDataTable;
 // ********** End ScriptStruct FUnistrokeDataTable *************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Spell_UnistrokeDataTable_h
+#define CURRENT_FILE_ID FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Private_SpellCasting_UnistrokeDataTable_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
