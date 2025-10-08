@@ -1,10 +1,10 @@
-/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Public/MagicianPlayerController.h
 /Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Public/MagicianPlayerCharacter.h
+/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Public/MagicianPlayerController.h
 /Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeRectangle.h
-/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/PaintWidget.h
-/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeRecognizer.h
-/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokePoint.h
 /Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeTemplate.h
+/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/PaintWidget.h
+/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokePoint.h
 /Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeResult.h
-/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeDataTable.h
+/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeRecognizer.h
 /Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/TrainWidget.h
+/Users/ylvajuno/Documents/GitHub/TheUndoing/TheUndoing/Source/TheUndoing/Private/SpellCasting/UnistrokeDataTable.h

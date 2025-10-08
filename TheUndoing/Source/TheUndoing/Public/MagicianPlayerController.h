@@ -58,6 +58,8 @@ public:
 	// --- State ---
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
 	bool bIsPaintingMode;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug")
+	bool debugMode;
 
 	// --- Public API for UI ---
 	UFUNCTION(BlueprintCallable) void TogglePaintMode();

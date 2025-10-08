@@ -245,13 +245,16 @@ void AMagicianPlayerController::Spell()
 
 	bool bSpellSucceeded = Result.Score >= 0.8f;
 
-	if (bSpellSucceeded)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Result.Name, true, FVector2D(2, 2));
-	}
-	else 
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "No Magic", true, FVector2D(2, 2));	
+	// Debug output
+	if (debugMode) {
+		if (bSpellSucceeded)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Result.Name, true, FVector2D(2, 2));
+		}
+		else 
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "No Magic", true, FVector2D(2, 2));	
+		}
 	}
 
 	// Send package to listening blueprints
@@ -282,7 +285,7 @@ void AMagicianPlayerController::LoadTemplates()
 		}
 	}
 	else {
-		if (GEngine) {
+		if (debugMode && GEngine) {
 			GEngine->AddOnScreenDebugMessage(
 				-1,                     // Key (-1 means "new message")
 				5.f,                    // Display time in seconds
@@ -331,6 +334,7 @@ void AMagicianPlayerController::AddTemplateToDataTable(const FString Name)
 
 void AMagicianPlayerController::ShowTrainWidget()
 {
+	debugMode = true;
 	if (TrainWidget != nullptr)
 	{
 		TrainWidget->SetVisibility(ESlateVisibility::Visible);
@@ -340,6 +344,7 @@ void AMagicianPlayerController::ShowTrainWidget()
 
 void AMagicianPlayerController::HideTrainWidget()
 {
+	debugMode = false;
 	if (TrainWidget != nullptr)
 	{
 		if (PaintWidget) PaintWidget->RemoveAllPoints(); // enGUARD!

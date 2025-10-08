@@ -657,6 +657,10 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 		{ "ToolTip", "--- State ---" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_debugMode_MetaData[] = {
+		{ "Category", "Debug" },
+		{ "ModuleRelativePath", "Public/MagicianPlayerController.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedViewTarget_MetaData[] = {
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// --- State ---\n" },
@@ -716,6 +720,8 @@ struct Z_Construct_UClass_AMagicianPlayerController_Statics
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSpellRecognized;
 	static void NewProp_bIsPaintingMode_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsPaintingMode;
+	static void NewProp_debugMode_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_debugMode;
 	static const UECodeGen_Private::FWeakObjectPropertyParams NewProp_SavedViewTarget;
 	static void NewProp_IsTraining_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsTraining;
@@ -751,7 +757,12 @@ void Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMo
 {
 	((AMagicianPlayerController*)Obj)->bIsPaintingMode = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode = { "bIsPaintingMode", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMagicianPlayerController), &Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsPaintingMode_MetaData), NewProp_bIsPaintingMode_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode = { "bIsPaintingMode", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMagicianPlayerController), &Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsPaintingMode_MetaData), NewProp_bIsPaintingMode_MetaData) };
+void Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_debugMode_SetBit(void* Obj)
+{
+	((AMagicianPlayerController*)Obj)->debugMode = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_debugMode = { "debugMode", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMagicianPlayerController), &Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_debugMode_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_debugMode_MetaData), NewProp_debugMode_MetaData) };
 const UECodeGen_Private::FWeakObjectPropertyParams Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_SavedViewTarget = { "SavedViewTarget", nullptr, (EPropertyFlags)0x0044000000000000, UECodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMagicianPlayerController, SavedViewTarget), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedViewTarget_MetaData), NewProp_SavedViewTarget_MetaData) };
 void Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_IsTraining_SetBit(void* Obj)
 {
@@ -766,6 +777,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMagicianPlaye
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMagicianPlayerController_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_OnSpellRecognized,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_bIsPaintingMode,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_debugMode,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_SavedViewTarget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_IsTraining,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicianPlayerController_Statics::NewProp_TrainWidgetClass,
@@ -814,10 +826,10 @@ struct Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing
 		{ FSpellRecognitionResult::StaticStruct, Z_Construct_UScriptStruct_FSpellRecognitionResult_Statics::NewStructOps, TEXT("SpellRecognitionResult"), &Z_Registration_Info_UScriptStruct_FSpellRecognitionResult, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSpellRecognitionResult), 1449911384U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMagicianPlayerController, AMagicianPlayerController::StaticClass, TEXT("AMagicianPlayerController"), &Z_Registration_Info_UClass_AMagicianPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPlayerController), 361110668U) },
+		{ Z_Construct_UClass_AMagicianPlayerController, AMagicianPlayerController::StaticClass, TEXT("AMagicianPlayerController"), &Z_Registration_Info_UClass_AMagicianPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicianPlayerController), 2141785700U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h__Script_TheUndoing_1055622302(TEXT("/Script/TheUndoing"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h__Script_TheUndoing_1497695969(TEXT("/Script/TheUndoing"),
 	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h__Script_TheUndoing_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h__Script_TheUndoing_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h__Script_TheUndoing_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ylvajuno_Documents_GitHub_TheUndoing_TheUndoing_Source_TheUndoing_Public_MagicianPlayerController_h__Script_TheUndoing_Statics::ScriptStructInfo),
 	nullptr, 0);
