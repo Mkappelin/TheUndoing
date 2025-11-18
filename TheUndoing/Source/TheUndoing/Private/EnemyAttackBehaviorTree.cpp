@@ -9,7 +9,6 @@ UEnemyAttackBehaviorTree::UEnemyAttackBehaviorTree()
     MaxEnemyHP = 100;
     RootSelector = nullptr;
     bTreeInitialized = false;
-    // DO NOT call SetupProperTreeStructure() here!
 }
 
 void UEnemyAttackBehaviorTree::EnsureTreeInitialized()
@@ -31,7 +30,6 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
     }
     RootSelector->Children.Empty();
 
-    // ===== PROPER HIERARCHICAL STRUCTURE =====
 
     // SEQUENCE 1: Defensive Combo (Multiple conditions must pass)
     UBehaviorTreeSequence* DefensiveSequence = NewObject<UBehaviorTreeSequence>(this);
@@ -92,19 +90,17 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
         PostureHealthSelector->Children = PostureHealthOptions;
     }
 
-    // Create the default condition
     UBTCondition_Default* DefaultCondition = NewObject<UBTCondition_Default>(this);
     DefaultCondition->DefaultTimer = 2.0f;
 
-    // BUILD ROOT WITH PROPER HIERARCHY
-    RootSelector->Children.Add(DefensiveSequence);        // Highest priority: defensive combos
-    RootSelector->Children.Add(PostureHealthSelector);    // Second: posture/health selection
-    RootSelector->Children.Add(DefaultCondition);         // Fallback
+    RootSelector->Children.Add(DefensiveSequence);       
+    RootSelector->Children.Add(PostureHealthSelector);    
+    RootSelector->Children.Add(DefaultCondition);         
 }float UEnemyAttackBehaviorTree::CalculateAttackTimer(float PreviousTimer, int32 EnemyHP, int32 PlayerHP, bool bBlockActive, float PlayerAccuracy)
 {
-    float OutTimer = 2.0f; // Default fallback
+    float OutTimer = 2.0f; 
 
-    // Ensure tree is initialized before use
+    
     EnsureTreeInitialized();
 
     if (RootSelector && RootSelector->Children.Num() > 0)
