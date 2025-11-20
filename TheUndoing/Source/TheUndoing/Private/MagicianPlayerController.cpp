@@ -122,7 +122,9 @@ void AMagicianPlayerController::Tick(float DeltaTime)
 		const FVector2D ScaledPoint = MousePoint / viewportScale;
 
 		const FVector2D LastPoint = Points.Num() > 0 ? Points.Last() : ScaledPoint;
-		const bool IsNewPoint = !LastPoint.Equals(ScaledPoint, 1.0f);
+
+		const float Distance = FVector2D::Distance(LastPoint, ScaledPoint);
+		const bool IsNewPoint = (Distance >= MinPointSpacing);
 
 		if (Points.Num() == 0 || (Points.Num() > 0 && IsNewPoint))
 		{
@@ -330,6 +332,15 @@ void AMagicianPlayerController::AddTemplateToDataTable(const FString Name)
 	HideTrainWidget();
 
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, "New Gesture was added", true, FVector2D(2, 2));
+}
+
+void AMagicianPlayerController::ConfigurePaintWidget(FLinearColor NewColor, float NewThickness)
+{
+	if (PaintWidget)
+	{
+		PaintWidget->BrushColor = NewColor;
+		PaintWidget->BrushSize = NewThickness;
+	}
 }
 
 void AMagicianPlayerController::ShowTrainWidget()

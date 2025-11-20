@@ -7,7 +7,6 @@
 #include "InputActionValue.h"
 #include "MagicianPlayerController.generated.h"
 
-
 USTRUCT(BlueprintType)
 struct FSpellRecognitionResult
 {
@@ -61,6 +60,20 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug")
 	bool debugMode;
 
+	// --- Widget Accessors ---
+	UFUNCTION(BlueprintPure, Category = "SpellDrawingUI")
+	UPaintWidget* GetPaintWidget() const { return PaintWidget; }
+
+	UFUNCTION(BlueprintPure, Category = "SpellDrawingUI")
+	UUserWidget* GetTrainWidget() const { return TrainWidget; }
+
+	// --- Widget Control ---
+	UFUNCTION(BlueprintCallable, Category = "SpellDrawingUI")
+	void ConfigurePaintWidget(FLinearColor NewColor, float NewThickness);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SpellDrawingUI")
+	float MinPointSpacing = 5.0f;  // in screen pixels
+
 	// --- Public API for UI ---
 	UFUNCTION(BlueprintCallable) void TogglePaintMode();
 	UFUNCTION(BlueprintCallable) void PressedToPaint();
@@ -79,7 +92,6 @@ public:
 private:
 	// --- Initialisation ---
 	UFUNCTION() void TryInitUI();
-
 
 	// --- State ---
 	UPROPERTY() TWeakObjectPtr<AActor> SavedViewTarget;
