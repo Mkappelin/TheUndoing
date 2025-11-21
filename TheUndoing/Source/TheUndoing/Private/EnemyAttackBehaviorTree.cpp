@@ -31,58 +31,58 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
     RootSelector->Children.Empty();
 
 
-    // SEQUENCE 1: Defensive Combo (Multiple conditions must pass)
+    //Sequence fast attack
     UBehaviorTreeSequence* DefensiveSequence = NewObject<UBehaviorTreeSequence>(this);
     {
         TArray<UBehaviorTreeNode*> DefensiveNodes;
 
-        // Condition 1: Player is blocking
+        //Player is blocking
         UBTCondition_BlockAndTimer* BlockCheck = NewObject<UBTCondition_BlockAndTimer>(this);
         BlockCheck->TimerThreshold = 1.0f;
         DefensiveNodes.Add(BlockCheck);
 
-        // Condition 2: Last attack was fast (combo opportunity)
+        //Last attack was fast
         UBTCondition_Default* ComboTimer = NewObject<UBTCondition_Default>(this);
-        ComboTimer->DefaultTimer = 1.0f; // Fast combo attack
+        ComboTimer->DefaultTimer = 1.0f; 
         DefensiveNodes.Add(ComboTimer);
 
         DefensiveSequence->Children = DefensiveNodes;
     }
 
-    // SELECTOR: Choose between AGGRESSIVE posture vs LOW HEALTH caution
+    //Selector between condition and sequence
     UBehaviorTreeSelector* PostureHealthSelector = NewObject<UBehaviorTreeSelector>(this);
     {
         TArray<UBehaviorTreeNode*> PostureHealthOptions;
 
-        // OPTION 1: Aggressive when player accuracy is low
+        //High accuracy = long timer
         UBTCondition_LowPlayerAccuracy* AggressiveCondition = NewObject<UBTCondition_LowPlayerAccuracy>(this);
-        AggressiveCondition->AccuracyThreshold = 0.9f;
+        AggressiveCondition->AccuracyThreshold = 0.95f;
         PostureHealthOptions.Add(AggressiveCondition);
 
-        // OPTION 2: Low Health Caution (when HP is low AND player is accurate)
+        //Second option Sequence(low hp)
         UBehaviorTreeSequence* LowHealthSequence = NewObject<UBehaviorTreeSequence>(this);
         {
             TArray<UBehaviorTreeNode*> LowHealthNodes;
 
-            // Condition 1: HP below 50%
+            //HP below 50%
             UBTCondition_EnemyHPBelow33Percent* CriticalHP = NewObject<UBTCondition_EnemyHPBelow33Percent>(this);
             CriticalHP->MaxEnemyHP = 100;
             LowHealthNodes.Add(CriticalHP);
 
-            // Condition 2: Player has decent accuracy (be careful)
+            //Player has decent accuracy
             UBTCondition_LowPlayerAccuracy* GoodAccuracy = NewObject<UBTCondition_LowPlayerAccuracy>(this);
             GoodAccuracy->AccuracyThreshold = 0.7f; // Player accuracy > 70%
             LowHealthNodes.Add(GoodAccuracy);
 
             UBTCondition_Default* CautiousTimer = NewObject<UBTCondition_Default>(this);
-            CautiousTimer->DefaultTimer = 3.5f; // Slow, cautious attacks
+            CautiousTimer->DefaultTimer = 3.5f;
             LowHealthNodes.Add(CautiousTimer);
 
             LowHealthSequence->Children = LowHealthNodes;
         }
         PostureHealthOptions.Add(LowHealthSequence);
 
-        // OPTION 3: Default defensive posture
+        //Default
         UBTCondition_Default* DefaultPosture = NewObject<UBTCondition_Default>(this);
         DefaultPosture->DefaultTimer = 5.0f;
         PostureHealthOptions.Add(DefaultPosture);
