@@ -115,7 +115,6 @@ void UEnemyAttackBehaviorTree::SetMaxEnemyHP(int32 NewMaxHP)
 {
     MaxEnemyHP = NewMaxHP;
 
-    // Rebuild tree with new HP value
     if (bTreeInitialized)
     {
         SetupProperTreeStructure();
