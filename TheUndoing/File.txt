@@ -1,0 +1,11 @@
+In use pin  Return Value  no longer exists on node  Get Paint Widget . Please refresh node or break links to remove pin.
+Could not find a function named "GetPaintWidget" in 'BP_MagicianPlayerController_C'.
+Make sure 'BP_MagicianPlayerController_C' has been compiled for  Get Paint Widget
+In use pin  Return Value  no longer exists on node  Get Paint Widget . Please refresh node or break links to remove pin.
+Could not find a function named "GetPaintWidget" in 'BP_MagicianPlayerController_C'.
+Make sure 'BP_MagicianPlayerController_C' has been compiled for  Get Paint Widget
+Could not find a variable named "BrushSize" in '/Script/TheUndoing.PaintWidget'.
+Make sure '/Script/TheUndoing.PaintWidget' has been compiled for  Get BrushSize
+In use pin  Return Value  no longer exists on node  Get Paint Widget . Please refresh node or break links to remove pin.
+Could not find a function named "GetPaintWidget" in 'BP_MagicianPlayerController_C'.
+Make sure 'BP_MagicianPlayerController_C' has been compiled for  Get Paint Widget
