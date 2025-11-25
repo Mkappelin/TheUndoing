@@ -390,3 +390,12 @@ void AMagicianPlayerController::EndPlay(const EEndPlayReason::Type EndPlayReason
 		Recognizer = nullptr;
 	}
 }
+
+UPaintWidget* AMagicianPlayerController::GetPaintWidget() const
+{
+	return PaintWidget;
+}
+UUserWidget* AMagicianPlayerController::GetTrainWidget() const
+{
+	return TrainWidget;
+}

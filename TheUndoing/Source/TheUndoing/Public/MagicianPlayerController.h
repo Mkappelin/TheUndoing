@@ -62,10 +62,10 @@ public:
 
 	// --- Widget Accessors ---
 	UFUNCTION(BlueprintPure, Category = "SpellDrawingUI")
-	UPaintWidget* GetPaintWidget() const { return PaintWidget; }
+	UPaintWidget* GetPaintWidget() const;
 
 	UFUNCTION(BlueprintPure, Category = "SpellDrawingUI")
-	UUserWidget* GetTrainWidget() const { return TrainWidget; }
+	UUserWidget* GetTrainWidget() const;
 
 	// --- Widget Control ---
 	UFUNCTION(BlueprintCallable, Category = "SpellDrawingUI")
