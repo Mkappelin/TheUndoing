@@ -40,7 +40,7 @@ public:
 
 	// --- Drawing Settings ---
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SpellDrawing")
-	EStrokeType StrokeType = EStrokeType::SingleColorLine;
+	EStrokeType StrokeType = EStrokeType::NiagaraRibbon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SpellDrawing", meta = (ToolTip = "Used for SingleColorLine & Ribbon"))
 	float BrushSize = 5.0f;
