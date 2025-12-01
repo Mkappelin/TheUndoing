@@ -31,7 +31,7 @@ public:
     float AccuracyThreshold = 0.3f;
 };
 
-// Enemy HP Below 33% Condition
+// Enemy HP Below 50% Condition, cba changing class name
 UCLASS(Blueprintable, BlueprintType)
 class THEUNDOING_API UBTCondition_EnemyHPBelow33Percent : public UBehaviorTreeNode
 {
@@ -41,7 +41,7 @@ public:
     virtual ECustomBTNodeResult ExecuteNode_Implementation(float PreviousTimer, int32 EnemyHP, int32 PlayerHP, bool bBlockActive, float PlayerAccuracy, float& OutTimer) override;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Condition")
-    int32 MaxEnemyHP = 100;
+    int32 MaxEnemyHP = 500;
 };
 
 // Enemy HP Below 66% Condition
@@ -54,7 +54,7 @@ public:
     virtual ECustomBTNodeResult ExecuteNode_Implementation(float PreviousTimer, int32 EnemyHP, int32 PlayerHP, bool bBlockActive, float PlayerAccuracy, float& OutTimer) override;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Condition")
-    int32 MaxEnemyHP = 100;
+    int32 MaxEnemyHP = 500;
 };
 
 // Default Condition
