@@ -5,7 +5,6 @@
 #include "UObject/NoExportTypes.h"
 #include "BehaviorTreeNode.generated.h"
 
-// Renamed to avoid conflict with Engine's EBTNodeResult
 UENUM()
 enum class ECustomBTNodeResult : uint8
 {
