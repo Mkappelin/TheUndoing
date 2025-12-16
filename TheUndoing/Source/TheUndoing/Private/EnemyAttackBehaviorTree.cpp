@@ -56,7 +56,7 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
 
         //High accuracy = long timer
         UBTCondition_LowPlayerAccuracy* AggressiveCondition = NewObject<UBTCondition_LowPlayerAccuracy>(this);
-        AggressiveCondition->AccuracyThreshold = 0.95f;
+        AggressiveCondition->AccuracyThreshold = 0.9f;
         PostureHealthOptions.Add(AggressiveCondition);
 
         //Second option Sequence(low hp)
