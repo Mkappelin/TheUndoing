@@ -33,7 +33,7 @@ bool ULogFileParser::CreateLogFile(
 {
 	OutFullPath.Reset();
 
-	const FString Timestamp = FDateTime::Now().ToString(TEXT("(%Y-%m-%d)"));
+	const FString Timestamp = FDateTime::Now().ToString(TEXT("(%Y-%m-%d-%M-%S)"));
 	const FString FileName = TEXT("log") + Timestamp + TEXT(".csv");
 
 	const FString CleanSubfolder = SanitizeRelativePath(Subfolder);
