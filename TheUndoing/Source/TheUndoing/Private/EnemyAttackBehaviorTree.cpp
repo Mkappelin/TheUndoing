@@ -43,7 +43,7 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
 
         //Last attack was fast
         UBTCondition_Default* ComboTimer = NewObject<UBTCondition_Default>(this);
-        ComboTimer->DefaultTimer = 1.0f; 
+        ComboTimer->DefaultTimer = 1.5f; 
         DefensiveNodes.Add(ComboTimer);
 
         DefensiveSequence->Children = DefensiveNodes;
