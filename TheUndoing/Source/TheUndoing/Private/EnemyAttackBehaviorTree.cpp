@@ -38,7 +38,7 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
 
         //Player is blocking
         UBTCondition_BlockAndTimer* BlockCheck = NewObject<UBTCondition_BlockAndTimer>(this);
-        BlockCheck->TimerThreshold = 1.0f;
+        BlockCheck->TimerThreshold = 1.5f;
         DefensiveNodes.Add(BlockCheck);
 
         //Last attack was fast
