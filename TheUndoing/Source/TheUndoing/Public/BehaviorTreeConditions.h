@@ -41,7 +41,7 @@ public:
     virtual ECustomBTNodeResult ExecuteNode_Implementation(float PreviousTimer, int32 EnemyHP, int32 PlayerHP, bool bBlockActive, float PlayerAccuracy, float& OutTimer) override;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Condition")
-    int32 MaxEnemyHP = 500;
+    int32 MaxEnemyHP = 400;
 };
 
 // Enemy HP Below 66% Condition

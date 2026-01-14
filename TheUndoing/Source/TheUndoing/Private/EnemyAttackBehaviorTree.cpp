@@ -66,7 +66,7 @@ void UEnemyAttackBehaviorTree::SetupProperTreeStructure()
 
             //HP below 50%
             UBTCondition_EnemyHPBelow33Percent* CriticalHP = NewObject<UBTCondition_EnemyHPBelow33Percent>(this);
-            CriticalHP->MaxEnemyHP = 500;
+            CriticalHP->MaxEnemyHP = 400;
             LowHealthNodes.Add(CriticalHP);
 
             //Player has decent accuracy
